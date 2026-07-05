@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1400, minimum-scale=0.1, maximum-scale=3.0">
+  <title>夢中で取り組める領域の見つけ方 — 畠山謙人 × 会計士Village</title>
+  <style>
+/* ===== CORE ENGINE（スクロール型・自己完結） ===== */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --color-bg:#0f1117;--color-bg-alt:#1a1d27;--color-surface:#1a1d27;--color-surface-alt:#252840;
+  --color-text:#e5e7eb;--color-text-secondary:#d1d5db;--color-text-muted:#9ca3af;--color-text-subtle:rgba(156,163,175,.5);
+  --color-accent:#f59e0b;--color-accent-light:rgba(245,158,11,.15);--color-accent-dim:rgba(245,158,11,.08);
+  --color-border:rgba(255,255,255,.09);--color-border-strong:rgba(255,255,255,.18);
+  --color-success:#10b981;--color-warning:#f59e0b;--color-danger:#ef4444;--color-indigo:#6366f1;
+  --font-primary:'Noto Sans JP','Hiragino Kaku Gothic ProN','Meiryo UI',sans-serif;
+  --text-xs:14px;--text-sm:16px;--text-base:17px;--text-lg:22px;--text-xl:27px;--text-2xl:34px;--text-3xl:44px;--text-4xl:56px;--text-5xl:70px;--text-hero:100px;
+  --space-xs:4px;--space-sm:8px;--space-md:14px;--space-lg:20px;--space-xl:28px;--space-2xl:40px;--space-3xl:56px;
+  --slide-padding:40px 64px;--slide-max-width:1400px;--radius-sm:4px;--radius-md:8px;--radius-lg:12px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html,body{width:100%;font-family:var(--font-primary);background:var(--color-bg);color:var(--color-text);-webkit-font-smoothing:antialiased}
+.slide-deck{width:100%}
+.slide{width:100vw;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:var(--slide-padding);position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.04)}
+.slide-inner{width:100%;max-width:var(--slide-max-width);display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1}
+
+/* SLIDE TYPES */
+.slide-title{background:#0a0a0a;text-align:left}
+.slide-title::before{content:'';position:absolute;top:-30%;right:-20%;width:80%;height:160%;background:radial-gradient(ellipse at 30% 50%,rgba(245,158,11,.30) 0%,transparent 60%),radial-gradient(ellipse at 70% 30%,rgba(217,119,6,.22) 0%,transparent 55%);filter:blur(40px);z-index:0;animation:auroraShift 12s ease-in-out infinite alternate}
+@keyframes auroraShift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-20px,10px) scale(1.05)}100%{transform:translate(10px,-15px) scale(.98)}}
+.slide-title .slide-inner{z-index:1}
+.title-main{font-size:var(--text-4xl);font-weight:900;line-height:1.18;letter-spacing:-.02em;margin-bottom:var(--space-lg);color:#fff}
+.title-sub{font-size:var(--text-lg);color:rgba(255,255,255,.72);line-height:1.6}
+.title-meta{font-size:var(--text-sm);color:rgba(255,255,255,.45);margin-top:var(--space-xl)}
+
+.slide-chapter{background:var(--color-bg);justify-content:center}
+.chapter-number{font-size:var(--text-hero);font-weight:900;color:var(--color-accent);line-height:1;opacity:.16;margin-bottom:var(--space-sm)}
+.chapter-title{font-size:var(--text-4xl);font-weight:900;line-height:1.2}
+.chapter-desc{font-size:var(--text-lg);color:var(--color-text-muted);margin-top:var(--space-md)}
+
+.slide-content{background:var(--color-bg)}
+.content-heading{font-size:var(--text-2xl);font-weight:900;margin-bottom:var(--space-lg);line-height:1.3}
+.content-body{font-size:var(--text-base);line-height:1.8;color:var(--color-text-muted)}
+
+.slide-end{background:#0a0a0a;text-align:center;justify-content:center}
+.slide-end::before{content:'';position:absolute;top:-30%;left:-20%;width:80%;height:160%;background:radial-gradient(ellipse at 40% 50%,rgba(245,158,11,.26) 0%,transparent 60%);filter:blur(40px);z-index:0}
+.slide-end .slide-inner{z-index:1}
+
+/* UTILITIES */
+.text-accent{color:var(--color-accent)}.text-muted{color:var(--color-text-muted)}.text-white{color:#fff}
+.font-bold{font-weight:700}.font-black{font-weight:900}
+.mt-sm{margin-top:var(--space-sm)}.mt-md{margin-top:var(--space-md)}.mt-lg{margin-top:var(--space-lg)}.mt-xl{margin-top:var(--space-xl)}
+.lead-box{margin-top:var(--space-xl);padding:var(--space-md) var(--space-lg);border-left:4px solid var(--color-accent);background:rgba(245,158,11,.06);border-radius:0 var(--radius-md) var(--radius-md) 0}
+
+/* COMPONENTS */
+.event-badge{display:inline-block;background:rgba(245,158,11,.15);border:1px solid var(--color-accent);border-radius:6px;padding:4px 14px;font-size:var(--text-xs);font-weight:700;letter-spacing:.08em;color:var(--color-accent);margin-bottom:var(--space-lg)}
+.three-col{display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--space-md);margin-top:var(--space-lg)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:var(--space-lg);margin-top:var(--space-lg)}
+.four-col{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-md);margin-top:var(--space-lg)}
+.col-card{padding:var(--space-lg);border-radius:var(--radius-md);border:1.5px solid var(--color-border);background:var(--color-surface)}
+.col-card.accent{border-color:var(--color-accent);background:rgba(245,158,11,.08)}
+.col-card.indigo{border-color:var(--color-indigo);background:rgba(99,102,241,.08)}
+.col-card.danger{border-color:var(--color-danger);background:rgba(239,68,68,.07)}
+.col-card.success{border-color:var(--color-success);background:rgba(16,185,129,.07)}
+.col-card-label{font-size:var(--text-xs);font-weight:700;letter-spacing:.1em;color:var(--color-accent);margin-bottom:var(--space-sm)}
+.col-card.indigo .col-card-label{color:var(--color-indigo)}
+.col-card.danger .col-card-label{color:var(--color-danger)}
+.col-card.success .col-card-label{color:var(--color-success)}
+.col-card-title{font-size:var(--text-lg);font-weight:700;margin-bottom:var(--space-sm);line-height:1.4}
+.col-card-desc{font-size:var(--text-xs);color:var(--color-text-muted);line-height:1.8}
+.three-col .col-card-desc,.two-col .col-card-desc{font-size:var(--text-sm)}
+
+.flow-row{display:flex;align-items:center;gap:var(--space-sm);margin-top:var(--space-lg);flex-wrap:wrap}
+.flow-item{flex:1;min-width:120px;padding:var(--space-md) var(--space-sm);border:1.5px solid var(--color-border);border-radius:var(--radius-md);text-align:center;font-size:var(--text-sm);background:var(--color-surface)}
+.flow-item.accent{border-color:var(--color-accent);background:rgba(245,158,11,.1)}
+.flow-arrow{color:var(--color-accent);font-size:var(--text-xl);font-weight:700;flex-shrink:0}
+
+.num-stat{text-align:center}
+.num-stat .stat-num{font-size:var(--text-4xl);font-weight:900;color:var(--color-accent);line-height:1}
+.num-stat .stat-label{font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-sm)}
+
+.pill{display:inline-block;background:rgba(245,158,11,.16);color:var(--color-accent);border:1px solid rgba(245,158,11,.4);border-radius:20px;padding:4px 14px;font-size:13px;font-weight:600;margin:3px}
+.pill.indigo{background:rgba(99,102,241,.15);color:var(--color-indigo);border-color:rgba(99,102,241,.4)}
+.pill.danger{background:rgba(239,68,68,.12);color:#f87171;border-color:rgba(239,68,68,.4)}
+
+.case-tag{background:var(--color-accent);color:#000;padding:4px 14px;border-radius:4px;font-size:var(--text-xs);font-weight:700;letter-spacing:.08em;display:inline-block;margin-bottom:var(--space-sm)}
+
+/* 年表テーブル */
+.cycle-table{width:100%;border-collapse:collapse;margin-top:var(--space-lg);font-size:var(--text-sm)}
+.cycle-table th{background:rgba(245,158,11,.12);color:var(--color-accent);font-weight:700;padding:12px 16px;text-align:left;border:1px solid var(--color-border);font-size:var(--text-xs);letter-spacing:.05em}
+.cycle-table td{padding:14px 16px;border:1px solid var(--color-border);line-height:1.7;color:var(--color-text-secondary);vertical-align:top}
+.cycle-table td.year{font-weight:900;color:var(--color-accent);white-space:nowrap;font-size:var(--text-base)}
+.cycle-table td.daiichi{color:#fff;font-weight:700}
+
+/* ワークステップ */
+.work-step{display:flex;gap:var(--space-md);align-items:flex-start;padding:var(--space-md) var(--space-lg);border:1.5px solid var(--color-border);border-radius:var(--radius-md);background:var(--color-surface);margin-top:var(--space-md)}
+.work-step .step-time{flex-shrink:0;background:var(--color-accent);color:#000;font-weight:900;font-size:var(--text-xs);border-radius:20px;padding:4px 14px;margin-top:2px}
+.work-step .step-body{font-size:var(--text-base);line-height:1.7}
+.work-step .step-body b{color:#fff}
+.work-step .step-note{font-size:var(--text-xs);color:var(--color-text-muted);margin-top:4px}
+
+/* 捨てたものリスト */
+.discard-item{display:flex;align-items:center;gap:var(--space-md);padding:10px 18px;border:1.5px solid rgba(239,68,68,.35);border-radius:var(--radius-md);background:rgba(239,68,68,.06);margin-top:var(--space-sm);font-size:var(--text-base)}
+.discard-item .x-mark{color:var(--color-danger);font-weight:900;font-size:var(--text-lg);flex-shrink:0}
+.discard-item .d-note{font-size:var(--text-xs);color:var(--color-text-muted);margin-left:auto;text-align:right}
+
+/* ワーク用プロンプト表示 */
+.prompt-wrap{position:relative;margin-top:var(--space-md)}
+.prompt-box{background:#0a0c10;border:1.5px solid var(--color-border-strong);border-radius:var(--radius-md);padding:16px 20px;font-family:Consolas,'Courier New',monospace;font-size:13px;line-height:1.65;color:#d1d5db;white-space:pre-wrap;margin:0}
+.prompt-box b{color:var(--color-accent)}
+.copy-btn{position:absolute;top:10px;right:10px;background:var(--color-accent);color:#000;border:none;border-radius:6px;padding:6px 14px;font-weight:700;font-size:13px;cursor:pointer;font-family:var(--font-primary)}
+.copy-btn:hover{transform:scale(1.05)}
+
+/* FIXED NAV */
+.fixed-nav{position:fixed;top:24px;left:24px;z-index:9999}
+.fixed-nav-btn{width:48px;height:48px;border-radius:50%;border:none;background:var(--color-accent);color:#000;font-size:22px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;transition:transform .2s}
+.fixed-nav-btn:hover{transform:scale(1.1)}
+.fixed-nav-menu{display:none;position:absolute;top:60px;left:0;background:#16181f;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:8px 0;min-width:420px;max-height:80vh;overflow-y:auto;box-shadow:0 8px 32px rgba(0,0,0,.6)}
+.fixed-nav.open .fixed-nav-menu{display:block}
+.fixed-nav-menu a{display:flex;align-items:center;gap:10px;padding:10px 22px;color:#e5e5e5;text-decoration:none;font-size:15px;transition:background .15s}
+.fixed-nav-menu a:hover{background:rgba(255,255,255,.08)}
+.fixed-nav-menu a .nav-num{color:var(--color-accent);font-weight:700;font-size:13px;min-width:26px}
+button,a{-webkit-tap-highlight-color:transparent}
+
+/* ===== PAGED MODE（1枚ずつ表示・ボタン送り） ===== */
+.slide{display:none}
+.slide.active{display:flex}
+.slide-controls{position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;align-items:center;gap:12px;background:rgba(22,24,31,.88);border:1px solid rgba(255,255,255,.14);border-radius:40px;padding:8px 14px;box-shadow:0 4px 20px rgba(0,0,0,.5)}
+.ctrl-btn{width:44px;height:44px;border-radius:50%;border:none;background:var(--color-accent);color:#000;font-size:18px;font-weight:900;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .15s,opacity .15s}
+.ctrl-btn:hover{transform:scale(1.08)}
+.ctrl-btn:disabled{opacity:.25;cursor:default;transform:none}
+.page-num{font-size:15px;color:var(--color-text-muted);min-width:64px;text-align:center;font-weight:700}
+
+@media (max-width:1023px){
+  :root{--text-2xl:30px;--text-4xl:46px;--text-hero:84px;--slide-padding:40px 28px}
+  .three-col,.two-col,.four-col{grid-template-columns:1fr}
+  .fixed-nav-menu{min-width:calc(100vw - 60px);max-width:calc(100vw - 60px)}
+  .slide-controls{bottom:16px;right:16px}
+}
+  </style>
+</head>
+<body>
+
+<!-- ナビゲーション -->
+<div class="fixed-nav" id="fixedNav">
+  <button class="fixed-nav-btn" onclick="document.getElementById('fixedNav').classList.toggle('open')">☰</button>
+  <div class="fixed-nav-menu">
+    <a href="#top"><span class="nav-num">▶</span>タイトル</a>
+    <a href="#profile"><span class="nav-num">◎</span>自己紹介</a>
+    <a href="#opening"><span class="nav-num">◎</span>みなさんと同じでした</a>
+    <a href="#nayami"><span class="nav-num">◎</span>当時の悩み</a>
+    <a href="#part1"><span class="nav-num">1</span>第1部 実話・3サイクル</a>
+    <a href="#cycles"><span class="nav-num">└</span>熱中→発信→仕事の3サイクル</a>
+    <a href="#web3entry"><span class="nav-num">└</span>Web3にハマった入口</a>
+    <a href="#seed2024"><span class="nav-num">└</span>シード特化も偶然と流れ</a>
+    <a href="#buzz2026"><span class="nav-num">└</span>2026年バズの数字</a>
+    <a href="#daiichi"><span class="nav-num">└</span>第一想起という状態</a>
+    <a href="#followers"><span class="nav-num">└</span>発信を続けると起きること</a>
+    <a href="#part2"><span class="nav-num">2</span>第2部 5つの着眼点</a>
+    <a href="#p1"><span class="nav-num">①</span>熱中は「気づく」もの</a>
+    <a href="#p2"><span class="nav-num">②</span>トレンド×専門の交差点</a>
+    <a href="#kanchigai"><span class="nav-num">└</span>「強みがない」は勘違い</a>
+    <a href="#p3"><span class="nav-num">③</span>発信して市場で判定</a>
+    <a href="#p4"><span class="nav-num">④</span>特化とは捨てる決断</a>
+    <a href="#p5"><span class="nav-num">⑤</span>波は乗り換える前提</a>
+    <a href="#part3"><span class="nav-num">3</span>第3部 実践編</a>
+    <a href="#work"><span class="nav-num">✎</span>5分ミニワーク（AI活用）</a>
+    <a href="#workprompt"><span class="nav-num">└</span>ワーク用プロンプト</a>
+    <a href="#gensoku"><span class="nav-num">◎</span>発信の5原則</a>
+    <a href="#action"><span class="nav-num">→</span>明日からの行動指針</a>
+    <a href="#end"><span class="nav-num">▶</span>まとめ</a>
+  </div>
+</div>
+
+<div class="slide-deck">
+
+  <!-- ===== TITLE ===== -->
+  <section id="top" class="slide slide-title">
+    <div class="slide-inner">
+      <div class="event-badge">会計士Village 特別セミナー　2026.08.20</div>
+      <div class="title-main">夢中で取り組める<br><span style="color:var(--color-accent);">領域</span>の見つけ方</div>
+      <div class="title-sub">NFT特化、シードスタートアップ特化、AI/Claude Code特化。3回の「特化」の軌跡から、自分の一点の見つけ方をお話しします</div>
+      <div class="title-meta">畠山 謙人（畠山謙人税理士事務所 ／ 公認会計士・税理士 ／ ナイル㈱ 監査等委員）</div>
+    </div>
+  </section>
+
+  <!-- ===== 自己紹介 ===== -->
+  <section id="profile" class="slide slide-content">
+    <div class="slide-inner">
+      <div class="content-heading">自己紹介は、数字だけ</div>
+      <div class="four-col">
+        <div class="num-stat"><div class="stat-num">0人</div><div class="stat-label">スタッフ数</div></div>
+        <div class="num-stat"><div class="stat-num">60社</div><div class="stat-label">顧問先（シード中心）</div></div>
+        <div class="num-stat"><div class="stat-num">700万</div><div class="stat-label">X累計インプレッション</div></div>
+        <div class="num-stat"><div class="stat-num">4年</div><div class="stat-label">税務発信歴（2022〜）</div></div>
+      </div>
+      <div class="content-body mt-xl">
+        キャリアは寄り道だらけ。鉄鋼メーカー財務 → トーマツ監査 → サイバーエージェント経理 → 税理士法人 → 2025年独立。<br>
+        <span class="text-white font-bold">この寄り道が、あとで全部「商品」になります。</span>今日はその話です。
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== オープニング ===== -->
+  <section id="opening" class="slide slide-content">
+    <div class="slide-inner">
+      <div class="case-tag">OPENING</div>
+      <div class="content-heading">みなさんと、同じでした</div>
+      <div class="content-body">独立前後にやっていた営業。全部リアルな実数です。</div>
+      <div class="three-col">
+        <div class="col-card">
+          <div class="col-card-label">営業①</div>
+          <div class="col-card-title">コワーキングの中で営業</div>
+          <div class="col-card-desc">スペース内の入居者に地道に声かけ。<b class="text-accent">法人顧問3件</b>を獲得。</div>
+        </div>
+        <div class="col-card">
+          <div class="col-card-label">営業②</div>
+          <div class="col-card-title">オンラインサロンで営業</div>
+          <div class="col-card-desc">中田敦彦さんのサロンに入会して活動。<b class="text-accent">仕事1件</b>を獲得。</div>
+        </div>
+        <div class="col-card">
+          <div class="col-card-label">営業③</div>
+          <div class="col-card-title">補助金情報を連絡しまくる</div>
+          <div class="col-card-desc">コロナ禍の補助金情報を、数少ない知り合いの起業家・会計士へひたすら連絡。</div>
+        </div>
+      </div>
+      <div class="lead-box">
+        <div style="font-size:var(--text-base);line-height:1.8;">泥臭い営業も無駄ではありません。この時期の付き合いから、<span class="text-accent font-bold">今も2件の顧問契約が続いています</span>。<br>ただ、これだけでは60社にはなりませんでした。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 当時の悩み ===== -->
+  <section id="nayami" class="slide slide-content">
+    <div class="slide-inner">
+      <div class="content-heading">当時の悩みは、たぶん今のみなさんと同じ</div>
+      <div class="two-col">
+        <div class="col-card danger">
+          <div class="col-card-label">悩み</div>
+          <div class="col-card-title">自分の強みが定まらない</div>
+          <div class="col-card-desc">監査バイトと税務業務で食いつなぐ。「箔」が欲しい。でも何を強みにすればいいのか、どうすれば他人から強みだと認識されるのか、わからない。</div>
+        </div>
+        <div class="col-card danger">
+          <div class="col-card-label">悩み</div>
+          <div class="col-card-title">販売チャネルがわからない</div>
+          <div class="col-card-desc">Xで仕事が取れる時代ではあった。でも、そのやり方がわからない。どうすれば仕事のオファーが来る状態になるのか、道筋が見えなかった。<br><span class="text-white">結論だけ先に言うと、最終的に一番強い販売チャネルは「Xで知り合った起業家」になりました。</span></div>
+        </div>
+      </div>
+      <div class="lead-box">
+        <div style="font-size:var(--text-lg);font-weight:700;color:#fff;line-height:1.7;">結論から言います。<br>テーマは会議室で決まらない。<span class="text-accent">熱中が先、仕事が後。</span></div>
+        <div style="font-size:var(--text-base);line-height:1.8;color:var(--color-text-secondary);margin-top:8px;">そして、熱中は<b class="text-white">外に伝えて初めて仕事になります</b>。熱中していることを知られないと、仕事になりようがない。今日はこの2つの話です。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 第1部 章扉 ===== -->
+  <section id="part1" class="slide slide-chapter">
+    <div class="slide-inner">
+      <div class="chapter-number">01</div>
+      <div class="chapter-title">実話。熱中→発信→仕事の<span class="text-accent">3サイクル</span></div>
+      <div class="chapter-desc">戦略的にテーマを決めたことは、一度もありません</div>
+    </div>
+  </section>
+
+  <!-- ===== 3サイクル表 ===== -->
+  <section id="cycles" class="slide slide-content">
+    <div class="slide-inner">
+      <div class="content-heading">熱中していたものが、あとから仕事になった</div>
+      <table class="cycle-table">
+        <tr><th style="width:90px;">年</th><th>熱中テーマ</th><th>発信</th><th>仕事への接続</th><th>作れた第一想起</th></tr>
+        <tr>
+          <td class="year">2022</td>
+          <td>Web3/NFTの会計税務</td>
+          <td>X発信がバズ</td>
+          <td>シード顧問先が増え始めた。『NFTの会計税務』著者に</td>
+          <td class="daiichi">「Web3税理士といえば畠山」</td>
+        </tr>
+        <tr>
+          <td class="year">2024</td>
+          <td>シードスタートアップの税務</td>
+          <td>ポッドキャスト<br>「スタートアップ税務AtoZ」</td>
+          <td>発信力が鍛えられ、シード顧問先がさらに増えた</td>
+          <td class="daiichi">シード税務の相談先として認知</td>
+        </tr>
+        <tr>
+          <td class="year">2026</td>
+          <td>Claude Code活用</td>
+          <td>X長編シリーズ11弾<br>累計700万imp</td>
+          <td>税理士向けコンサルティング事業が始まった</td>
+          <td class="daiichi">「AIを使いこなす税理士といえば畠山」</td>
+        </tr>
+      </table>
+      <div class="lead-box">
+        <div style="font-size:var(--text-base);line-height:1.8;">3回に共通するのは、熱中しただけで終わらせず、<span class="text-accent font-bold">熱中を外に伝えた</span>こと。<span class="text-white font-bold">バズった内容が、そのまま商品になっている。</span>発信と事業が直結。しかも毎回、前サイクルの資産（スキル・人脈・信頼）が次の初速を上げています。バズは消えても、資産は残る。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Web3入口 ===== -->
+  <section id="web3entry" class="slide slide-content">
+    <div class="slide-inner">
+      <div class="case-tag">CASE：2022</div>
+      <div class="content-heading">Web3にハマった入口。戦略ゼロ、偶然だらけ</div>
+      <div class="flow-row">
+        <div class="flow-item">STEPNが流行っていると知り<br><b class="text-white">まず自分でやってみた</b></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-item">VeryLongAnimalsの誕生を<br><b class="text-white">Xで目の当たりにする</b></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-item">たまたま京都移住。京大生母体の<br><b class="text-white">プロジェクトとリアルで会えた</b></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-item accent">気づけばWeb3の<br><b>会計税務の第一人者に</b></div>
+      </div>
+      <div class="content-body mt-xl">
+        もともと新しいテクノロジーを面白がって、実際に触ってみるタイプだった。それが全部つながっただけです。<br>
+        <span class="text-white font-bold">「仕事になるから」ではなく、面白いから触っていた。</span>でも、動いた人にしか波は来ません。
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== シード特化の経緯 ===== -->
+  <section id="seed2024" class="slide slide-content">
+    <div class="slide-inner">
+      <div class="case-tag">CASE：2024</div>
+      <div class="content-heading">シード特化も、戦略ではなく偶然と流れ</div>
+      <div class="flow-row">
+        <div class="flow-item">Web3税務に特化</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-item">出会えた人たちが<br><b class="text-white">シードの起業家だった</b></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-item"><b class="text-white">わりきって</b><br>シードに特化</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-item">担当して<br>詳しくなった</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-item accent">ポッドキャスト<br><b>「スタートアップ税務AtoZ」開始</b></div>
+      </div>
+      <div class="content-body mt-xl">
+        特化領域を先に決めて、顧客を探しにいったのではありません。<span class="text-white font-bold">目の前に来てくれた人たちに合わせて、わりきって特化した。</span>詳しくなったのは、その後です。
+      </div>
+      <div class="lead-box">
+        <div style="font-size:var(--text-base);line-height:1.8;">特化は「捨てる決断」ですが、きっかけは偶然でいい。<span class="text-accent font-bold">流れに、わりきって乗る。</span>波はいつも、想定の外から来ます。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 2026バズの数字 ===== -->
+  <section id="buzz2026" class="slide slide-content">
+    <div class="slide-inner">
+      <div class="case-tag">CASE：2026</div>
+      <div class="content-heading">バズは、ここまで仕事になる</div>
+      <div class="four-col">
+        <div class="num-stat"><div class="stat-num">330万</div><div class="stat-label">3/14投稿のインプレッション</div></div>
+        <div class="num-stat"><div class="stat-num">60件+</div><div class="stat-label">2週間のDM・問い合わせ</div></div>
+        <div class="num-stat"><div class="stat-num">1,000万円</div><div class="stat-label">売上ポテンシャル（保守的試算）</div></div>
+        <div class="num-stat"><div class="stat-num">0円</div><div class="stat-label">広告費</div></div>
+      </div>
+      <div class="two-col">
+        <div class="col-card">
+          <div class="col-card-label">BEFORE</div>
+          <div class="col-card-title">バズ前は月0〜2件のリード</div>
+          <div class="col-card-desc">フォロワー5,000人時代からSNS経由で仕事は生まれていた。ただし細く、不安定。</div>
+        </div>
+        <div class="col-card accent">
+          <div class="col-card-label">拡散の起点</div>
+          <div class="col-card-title">既存顧問先の引用リポスト</div>
+          <div class="col-card-desc">広告では絶対に作れない「第三者からの推薦」。日頃の仕事が発信の燃料になる。</div>
+        </div>
+      </div>
+      <div class="lead-box">
+        <div style="font-size:var(--text-base);line-height:1.8;">方針はひとつ。<span class="text-accent font-bold">「お仕事ください」は言わない。ギブに徹する。</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 第一想起 ===== -->
+  <section id="daiichi" class="slide slide-content">
+    <div class="slide-inner">
+      <div class="content-heading">目指す状態＝<span class="text-accent">第一想起</span></div>
+      <div class="content-body">「そのテーマで支援できる会計士・税理士は誰か」となったとき、真っ先に名前が浮かぶ状態のことです。</div>
+      <div class="two-col">
+        <div class="col-card accent">
+          <div class="col-card-label">発信する第一人者</div>
+          <div class="col-card-title">出会う前に、専門性が伝わる</div>
+          <div class="col-card-desc">会ったことのない人からもオファーが来る。バズった内容がそのまま商品になる。トレンドを怖がらず発信した人だけが取れるポジション。</div>
+        </div>
+        <div class="col-card">
+          <div class="col-card-label">発信しない第一人者</div>
+          <div class="col-card-title">「出会う機会がないと良さが分からない」</div>
+          <div class="col-card-desc">実績のみで第一人者になる道もある。ただし専門性が伝わるのは、すでに仕事で付き合いのある人だけ。独立初期ほど、この差は大きい。</div>
+        </div>
+      </div>
+      <div class="lead-box">
+        <div style="font-size:var(--text-base);line-height:1.8;">強み・箔は、自分で貼るものではなく<span class="text-white font-bold">市場が貼ってくれるもの</span>。発信への反応が積み重なって、後から「認識される」。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 発信を続けると何が起きるか（フォロワー実測値） ===== -->
+  <section id="followers" class="slide slide-content">
+    <div class="slide-inner">
+      <div class="case-tag">実測値</div>
+      <div class="content-heading">発信を続けると、何が起きるか</div>
+      <div class="flow-row">
+        <div class="flow-item">〜1,000人<br><span class="text-muted" style="font-size:13px;">問い合わせほぼゼロ。<br>2021年までの自分</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-item">3,000人<br><span class="text-muted" style="font-size:13px;">「見かけたことのある税理士」に。<br>DM相談が月1件ペース</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-item">5,000人<br><span class="text-muted" style="font-size:13px;">飛び込み相談が定常化。<br>仕事獲得の基盤が完成</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-item accent"><b>バズ</b><br><span style="font-size:13px;">330万imp<br>DM60件超</span></div>
+      </div>
+      <div class="two-col">
+        <div class="col-card accent">
+          <div class="col-card-label">転機はテーマを絞ったこと</div>
+          <div class="col-card-title">2008年開始、2021年まで1,000人で停滞</div>
+          <div class="col-card-desc">経験語りでテーマが散らばっていた時代は伸びなかった。「シードスタートアップの税務」に絞ってから、運用が格段に回り始めた。</div>
+        </div>
+        <div class="col-card">
+          <div class="col-card-label">新規顧問の内訳</div>
+          <div class="col-card-title">飛び込み1〜2割、紹介8割</div>
+          <div class="col-card-desc">紹介の8割も、元をたどればX経由でつながった人から。発信は飛び込みだけでなく、紹介の網も広げている。</div>
+        </div>
+      </div>
+      <div class="lead-box">
+        <div style="font-size:var(--text-base);line-height:1.8;">効くのはフォロワー数そのものではなく、<span class="text-white font-bold">「届けたい層に、何を発信しているか」</span>。同業と交流するだけのアカウントからは仕事は生まれません。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 第2部 章扉 ===== -->
+  <section id="part2" class="slide slide-chapter">
+    <div class="slide-inner">
+      <div class="chapter-number">02</div>
+      <div class="chapter-title">領域の決め方。<span class="text-accent">5つの着眼点</span></div>
+      <div class="chapter-desc">3サイクルの実体験から抽出した方法論</div>
+    </div>
+  </section>
+
+  <!-- ===== 着眼点1 ===== -->
+  <section id="p1" class="slide slide-content">
+    <div class="slide-inner">
+      <div class="case-tag">着眼点 ①</div>
+      <div class="content-heading">熱中は「探す」ものではなく「気づく」もの</div>
+      <div class="two-col">
+        <div class="col-card success">
+          <div class="col-card-label">候補になるもの</div>
+          <div class="col-card-title">すでに勝手に時間を使っているもの</div>
+          <div class="col-card-desc">頼まれていないのに調べているもの。STEPNもVeryLongAnimalsも「仕事になるから」ではなく、面白いから触っていた。</div>
+        </div>
+        <div class="col-card danger">
+          <div class="col-card-label">続かないもの</div>
+          <div class="col-card-title">「稼げそうなテーマ」から逆算したもの</div>
+          <div class="col-card-desc">ゼロから探すと、市場性だけでテーマを選んでしまう。熱中がないので発信が続かず、第一想起に届く前に止まる。</div>
+        </div>
+      </div>
+      <div class="lead-box">
+        <div style="font-size:var(--text-base);line-height:1.8;">問いを変える。「何をやれば稼げるか」ではなく<span class="text-accent font-bold">「自分はすでに何に時間を使っているか」</span>。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 着眼点2 ===== -->
+  <section id="p2" class="slide slide-content">
+    <div class="slide-inner">
+      <div class="case-tag">着眼点 ②</div>
+      <div class="content-heading">トレンド × 自分の専門 の交差点を取る</div>
+      <div class="flow-row">
+        <div class="flow-item">トレンド単体<br><span class="text-muted" style="font-size:15px;">ただの素人</span></div>
+        <div class="flow-arrow">×</div>
+        <div class="flow-item">専門単体<br><span class="text-muted" style="font-size:15px;">大勢の中に埋もれる</span></div>
+        <div class="flow-arrow">＝</div>
+        <div class="flow-item accent"><b>交差点</b><br><span style="font-size:15px;">競合ほぼゼロの一点</span></div>
+      </div>
+      <div class="two-col">
+        <div class="col-card accent">
+          <div class="col-card-label">実例 2022</div>
+          <div class="col-card-title">NFT × 会計税務</div>
+          <div class="col-card-desc">NFTに詳しい人は大勢いた。会計税務の専門家も大勢いた。両方を語れる人は、ほぼいなかった。</div>
+        </div>
+        <div class="col-card accent">
+          <div class="col-card-label">実例 2026</div>
+          <div class="col-card-title">AI（Claude Code）× 税理士実務</div>
+          <div class="col-card-desc">エンジニアはAIを語れるが税理士実務を知らない。税理士はAIを怖がって触らない。交差点はがら空きだった。</div>
+        </div>
+      </div>
+      <div class="lead-box">
+        <div style="font-size:var(--text-base);line-height:1.8;">交差点なら、第一想起ポジションを<span class="text-white font-bold">最速で取れる</span>。あなたの寄り道・変な経験ほど、交差点の材料になります。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 「強みがない」は勘違い ===== -->
+  <section id="kanchigai" class="slide slide-content">
+    <div class="slide-inner">
+      <div class="case-tag">大前提</div>
+      <div class="content-heading">「自分には強みがない」は、<span class="text-accent">勘違い</span></div>
+      <div class="content-body">スタートアップ、クリニック、建設業。ドメイン名だけ見ると専門性がなさそうに見えます。でも、担当したからこそ答えを自分で作った経験が、必ず貯まっています。</div>
+      <div class="two-col">
+        <div class="col-card danger">
+          <div class="col-card-label">当時の自分の認識</div>
+          <div class="col-card-title">「スタートアップに強い税理士なんて、うじゃうじゃいる」</div>
+          <div class="col-card-desc">ドメインだけで見れば、そのとおり。レッドオーシャンに見えていた。</div>
+        </div>
+        <div class="col-card success">
+          <div class="col-card-label">実際に持っていた強み</div>
+          <div class="col-card-title">担当して、泥をかぶった経験</div>
+          <div class="col-card-desc" style="line-height:1.9;">
+            シード起業家の相談を聞けば、<b class="text-white">すぐ巻き取ってバックオフィスを作れる</b>。<br>
+            株式まわりの税務は、ネットにも書籍にも具体例が載っていない。<b class="text-white">生の事例に一番当たってきた自信</b>で回答できる。
+          </div>
+        </div>
+      </div>
+      <div class="lead-box">
+        <div style="font-size:var(--text-lg);font-weight:700;color:#fff;line-height:1.7;">調べても答えがなくて、自分で進めるしかなかった仕事。<br><span class="text-accent">それが、すでにあなたの専門性です。</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 着眼点3 ===== -->
+  <section id="p3" class="slide slide-content">
+    <div class="slide-inner">
+      <div class="case-tag">着眼点 ③</div>
+      <div class="content-heading">小さく発信して、市場の反応で判定する</div>
+      <div class="content-body">熱中テーマかどうかは、自分ひとりでは判定できません。私の判定基準は2段階です。</div>
+      <div class="two-col">
+        <div class="col-card">
+          <div class="col-card-label">STEP 1｜入口の判定（自分）</div>
+          <div class="col-card-title">面白がって、最近よく調べているか</div>
+          <div class="col-card-desc">これが無いテーマは発信が続かない。まず自分の熱中が前提。</div>
+        </div>
+        <div class="col-card">
+          <div class="col-card-label">STEP 2｜市場の判定（X）</div>
+          <div class="col-card-title">ポストしてimp・いいねの伸びを見る</div>
+          <div class="col-card-desc">反応が良いと「別の切り口でまた投稿しよう」というループが生まれる。このループが回り始めたら熱中テーマ。</div>
+        </div>
+      </div>
+      <div class="lead-box">
+        <div style="font-size:var(--text-lg);font-weight:700;color:#fff;line-height:1.7;">バズの手応えを確認できたら、<span class="text-accent">その一本に絞って集中する。</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 着眼点4 ===== -->
+  <section id="p4" class="slide slide-content">
+    <div class="slide-inner">
+      <div class="case-tag">着眼点 ④</div>
+      <div class="content-heading">特化とは、<span class="text-accent">捨てる決断</span></div>
+      <div class="content-body">「会計士なら何でもやれる」と言いたくなります。私はシード期スタートアップ税務に特化するため、これを全部捨てました。</div>
+      <div class="two-col" style="align-items:start;">
+        <div>
+          <div class="discard-item"><span class="x-mark">✕</span>ミドル・レイター以降のフェーズ</div>
+          <div class="discard-item"><span class="x-mark">✕</span>IT系以外の業種（中小企業・スモールビジネス全般）</div>
+          <div class="discard-item"><span class="x-mark">✕</span>IPO支援<span class="d-note">みんなが関わりたがる分野でも捨てる</span></div>
+          <div class="discard-item"><span class="x-mark">✕</span>M&A支援全般（DD・バリュエーション含む）</div>
+          <div class="discard-item"><span class="x-mark">✕</span>事業承継・資産税</div>
+          <div class="discard-item"><span class="x-mark">✕</span>連結決算・ファンド手続き<span class="d-note">対応できるが掲げない</span></div>
+        </div>
+        <div class="col-card success">
+          <div class="col-card-label">捨てたから磨けた、4つの強み</div>
+          <div class="col-card-desc" style="font-size:var(--text-base);line-height:2.0;">
+            <b class="text-white">1. 徹底した寄り添い</b><br><span style="font-size:var(--text-xs);">起業家は「何がわからないかがわからない」。初歩から丁寧に</span><br>
+            <b class="text-white">2. 省力的な仕組みづくり</b><br><span style="font-size:var(--text-xs);">バックオフィスを最小限の労力で回す設計</span><br>
+            <b class="text-white">3. 即レス</b><br><span style="font-size:var(--text-xs);">スピードそのものが差別化になる</span><br>
+            <b class="text-white">4. 資本政策への対応</b><br><span style="font-size:var(--text-xs);">株式による資金調達の実務・税務に深く乗る</span>
+          </div>
+        </div>
+      </div>
+      <div class="flow-row" style="margin-top:var(--space-md);">
+        <div class="flow-item" style="padding:10px 8px;">特化する</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-item" style="padding:10px 8px;">その分野の相談が<br>自分に集まる</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-item" style="padding:10px 8px;">最新の相談事例・<br>情報が貯まる</div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-item accent" style="padding:10px 8px;"><b>専門性がさらに高まる</b><br><span style="font-size:12px;">→ 最初に戻って加速</span></div>
+      </div>
+      <div class="lead-box">
+        <div style="font-size:var(--text-base);line-height:1.8;">このループが回り出すと、後発は追いつけません。<span class="text-white font-bold">ありきたりな分野でも、専門性がにじみ出れば、それが強みになり「あなたのタグ」になります。</span></div>
+        <div style="font-size:var(--text-lg);font-weight:700;color:#fff;margin-top:6px;">あなたは、何を捨てられますか？</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 着眼点5 ===== -->
+  <section id="p5" class="slide slide-content">
+    <div class="slide-inner">
+      <div class="case-tag">着眼点 ⑤</div>
+      <div class="content-heading">波は乗り換える前提。ただし資産は引き継ぐ</div>
+      <div class="flow-row">
+        <div class="flow-item">Web3の波<br><span class="text-muted" style="font-size:15px;">2022　→ 去った</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-item">シード税務の波<br><span class="text-muted" style="font-size:15px;">2024　→ 本業に</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-item accent">AIの波<br><span style="font-size:15px;">2026　→ いまここ</span></div>
+      </div>
+      <div class="content-body mt-xl">
+        Web3の波は去りました。でも残ったものがあります。<br>
+        <span class="mt-md" style="display:block;">
+        <span class="pill">人脈</span><span class="pill">発信スキル</span><span class="pill">顧問先</span><span class="pill">『NFTの会計税務』著者の実績</span>
+        </span>
+      </div>
+      <div class="lead-box">
+        <div style="font-size:var(--text-base);line-height:1.8;">「一生もののテーマを決めなきゃ」と構えると動けません。<span class="text-white font-bold">3〜4年で乗り換えてよい。</span>波は消えても、資産は次の初速になる。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 第3部 章扉 ===== -->
+  <section id="part3" class="slide slide-chapter">
+    <div class="slide-inner">
+      <div class="chapter-number">03</div>
+      <div class="chapter-title">実践編。<span class="text-accent">いま、ここで書く</span></div>
+      <div class="chapter-desc">5分だけ、手を動かしてもらいます</div>
+    </div>
+  </section>
+
+  <!-- ===== ミニワーク（AI活用） ===== -->
+  <section id="work" class="slide slide-content">
+    <div class="slide-inner">
+      <div class="case-tag">WORK</div>
+      <div class="content-heading">5分ミニワーク「AIと一緒に、自分の交差点を見つける」</div>
+      <div class="content-body">お手元のスマホで <b class="text-white">Claude または ChatGPT</b> を開いてください。紙とペンではなく、AIに壁打ち相手をやってもらいます。</div>
+      <div class="work-step"><span class="step-time">1分</span><div class="step-body"><b>プロンプトを貼り付ける</b>：次のスライドの専用プロンプトをそのままAIに送る<div class="step-note">全文はこの場で配布します。無料版のClaude/ChatGPTでも動きます</div></div></div>
+      <div class="work-step"><span class="step-time">3分</span><div class="step-body"><b>AIの質問に答える</b>：キャリアの寄り道、担当して苦しんだ仕事、最近勝手に時間を使っていること<div class="step-note">SNSで発信している人は、自分のプロフィールURLを貼ると精度が一気に上がります</div></div></div>
+      <div class="work-step"><span class="step-time">1分</span><div class="step-body"><b>交差点候補を1つ選ぶ</b>：AIが出した3候補から「面白そう」と体温が上がるものに決める<div class="step-note">「稼げそう」で選ばない。熱中が先、仕事が後</div></div></div>
+      <div class="lead-box">
+        <div style="font-size:var(--text-base);line-height:1.8;">このワークのゴールは、新しい何かを作ることではなく、<span class="text-accent font-bold">すでに持っている強みに気づいて持ち帰ること</span>。特別なことは何も要りません。選んだ交差点は<span class="text-white font-bold">懇親会の名刺交換のネタ</span>にしてください。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ワーク用プロンプト全文 ===== -->
+  <section id="workprompt" class="slide slide-content">
+    <div class="slide-inner">
+      <div class="content-heading">ワーク用プロンプト（コピーしてそのまま使えます）</div>
+      <div class="prompt-wrap">
+        <button class="copy-btn" id="copyPromptBtn">コピー</button>
+        <pre class="prompt-box" id="promptText">あなたはキャリア戦略の壁打ち相手です。
+私は独立している（または独立を考えている）公認会計士です。
+「自分ならではの経験 × 会計士の専門性」の交差点で、私が夢中で取り組める
+発信領域を見つける手伝いをしてください。
+
+# 前提
+私は「自分には強みがない」と感じているかもしれませんが、それは勘違いです。
+ありきたりな業種の担当経験でも、調べても答えがなく自分で何とかした仕事には
+その人だけの専門性が埋まっている、という前提で掘り出してください。
+
+# 私の情報
+1. キャリアの寄り道（職歴・変わった経験・失敗談）：
+2. 担当したからこそ苦しんだ仕事。調べてもネットや書籍に答えがなく、
+   自分で進めるしかなかった論点：
+3. 直近3ヶ月、仕事以外で勝手に時間を使ったこと・調べたこと：
+4. SNSアカウント（発信していればURLを貼る。投稿の傾向も踏まえてください）：
+
+# お願いすること
+- 上の情報から「強みの原石」を3つ挙げる。本人が当たり前だと
+  思っていることほど価値がある前提で探すこと
+- 「熱中・経験 × 会計士の専門性」の交差点候補を3つ提案する
+- 各候補に「◯◯といえばこの人」と言われる一言ポジションを付ける
+- 一番有望な候補について、最初に投稿するXポスト案を3本書く
+
+# 進め方
+私の情報が空欄のままなら、まとめてではなく1問ずつ質問してください。</pre>
+      </div>
+      <div class="content-body mt-md" style="font-size:var(--text-xs);">
+        ポイント：4のSNS欄にプロフィールURLを貼ると、AIが過去の投稿傾向まで踏まえて提案してくれます。発信していない人は空欄のままでOK。AIから順番に質問が来ます。特に2（担当して苦しんだ仕事）が、あなただけの専門性の鉱脈です。
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 発信の5原則（noteエッセンス） ===== -->
+  <section id="gensoku" class="slide slide-content">
+    <div class="slide-inner">
+      <div class="content-heading">いざ発信するとき。<span class="text-accent">5つの原則</span></div>
+      <div class="content-body">X歴15年以上・炎上ゼロで、発信を仕事につなげてきた運用ルールです。</div>
+      <div class="work-step"><span class="step-time">①</span><div class="step-body"><b>出し惜しみしない</b><div class="step-note">知識・ノウハウの骨子は無料で全部出す。ギブは巡って自分に返ってくる</div></div></div>
+      <div class="work-step"><span class="step-time">②</span><div class="step-body"><b>自分語り・営業をしない</b><div class="step-note">「私はこんなことができます」は読み手にはノイズ。「お仕事ください」も言わない</div></div></div>
+      <div class="work-step"><span class="step-time">③</span><div class="step-body"><b>テーマに一貫性を持たせる</b><div class="step-note">散らばると誰にも届かない。絞った瞬間からアカウントは回り始める</div></div></div>
+      <div class="work-step"><span class="step-time">④</span><div class="step-body"><b>悪口・愚痴を書かない</b><div class="step-note">信頼は減点方式。人を嫌な気持ちにさせない発信を貫けば炎上はしない</div></div></div>
+      <div class="work-step"><span class="step-time">⑤</span><div class="step-body"><b>資料の要約より、現場の気付き</b><div class="step-note">日頃の仕事こそ発信の燃料。生情報にしか出せない価値がある</div></div></div>
+      <div class="lead-box">
+        <div style="font-size:var(--text-base);line-height:1.8;">発信を貯めておくと、会う前に相手が学習してくれて<span class="text-white font-bold">「指名」で相談が来る</span>ようになります（売らない営業）。さらにこれからは、潜在顧客が生成AIに依頼先を聞く時代。<span class="text-accent font-bold">ストックした発信は、AIにも見つけてもらえます。</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 行動指針 ===== -->
+  <section id="action" class="slide slide-content">
+    <div class="slide-inner">
+      <div class="content-heading">明日からの行動指針</div>
+      <div class="three-col">
+        <div class="col-card accent">
+          <div class="col-card-label">RULE 1</div>
+          <div class="col-card-title">まず10本、発信する</div>
+          <div class="col-card-desc">完璧を目指さない。反応を見るのが目的。1本目からバズる必要はない。</div>
+        </div>
+        <div class="col-card">
+          <div class="col-card-label">RULE 2</div>
+          <div class="col-card-title">食い扶持は確保したまま回す</div>
+          <div class="col-card-desc">監査バイト・税務業務のスタンダードルートは否定しない。土台を保ちながら熱中テーマを回すのが現実解。</div>
+        </div>
+        <div class="col-card">
+          <div class="col-card-label">RULE 3</div>
+          <div class="col-card-title">時間軸は年単位で見る</div>
+          <div class="col-card-desc">私の場合、2022年のバズから税理士コンサル開始まで4年。焦らず、でも止めない。</div>
+        </div>
+      </div>
+      <div class="lead-box">
+        <div style="font-size:var(--text-base);line-height:1.8;">発信の心得：<span class="text-accent font-bold">営業メッセージを出さない。ギブに徹する。</span>バズらせるためじゃなく、再現性を配るために発信する。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== まとめ ===== -->
+  <section id="end" class="slide slide-end">
+    <div class="slide-inner">
+      <div class="content-heading" style="font-size:var(--text-3xl);">テーマは会議室で決まらない。<br><span class="text-accent">熱中が先、仕事が後。</span></div>
+      <div class="content-body mt-lg" style="font-size:var(--text-lg);">
+        熱中に気づく → 交差点を取る → 小さく発信 → 反応が来たら一本に絞る → 捨てて磨く
+      </div>
+      <div class="content-body mt-md" style="font-size:var(--text-base);">
+        熱中する。そして、熱中を伝える。<span class="text-white font-bold">知られない熱中は、仕事になりようがない。</span>
+      </div>
+      <div class="content-body mt-xl">
+        このあとの懇親会では、みなさんの「交差点メモ」を聞かせてください。<br>
+        <span class="text-muted" style="font-size:var(--text-sm);">畠山謙人 ／ X: @kandmybike ／ ポッドキャスト「スタートアップ税務AtoZ」</span>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ページ送りコントロール -->
+<div class="slide-controls">
+  <button class="ctrl-btn" id="prevBtn" title="前へ（←キー）">◀</button>
+  <span class="page-num" id="pageNum">1 / 1</span>
+  <button class="ctrl-btn" id="nextBtn" title="次へ（→キー）">▶</button>
+</div>
+
+<script>
+var slides=Array.prototype.slice.call(document.querySelectorAll('.slide'));
+var cur=0;
+
+function show(i){
+  cur=Math.max(0,Math.min(slides.length-1,i));
+  slides.forEach(function(s,j){s.classList.toggle('active',j===cur);});
+  document.getElementById('pageNum').textContent=(cur+1)+' / '+slides.length;
+  document.getElementById('prevBtn').disabled=(cur===0);
+  document.getElementById('nextBtn').disabled=(cur===slides.length-1);
+  window.scrollTo(0,0);
+  if(slides[cur].id) history.replaceState(null,'','#'+slides[cur].id);
+}
+
+document.getElementById('prevBtn').addEventListener('click',function(){show(cur-1);});
+document.getElementById('nextBtn').addEventListener('click',function(){show(cur+1);});
+
+document.addEventListener('keydown',function(e){
+  if(e.key==='ArrowRight'||e.key==='PageDown'||e.key==='Enter'||(e.key===' '&&!e.shiftKey)){e.preventDefault();show(cur+1);}
+  else if(e.key==='ArrowLeft'||e.key==='PageUp'||(e.key===' '&&e.shiftKey)){e.preventDefault();show(cur-1);}
+  else if(e.key==='Home'){e.preventDefault();show(0);}
+  else if(e.key==='End'){e.preventDefault();show(slides.length-1);}
+});
+
+/* ☰メニューは該当スライドへ直接ジャンプ */
+document.querySelectorAll('.fixed-nav-menu a').forEach(function(a){
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    var id=a.getAttribute('href').slice(1);
+    var idx=slides.findIndex(function(s){return s.id===id;});
+    if(idx>=0) show(idx);
+    document.getElementById('fixedNav').classList.remove('open');
+  });
+});
+
+document.addEventListener('click',function(e){
+  var nav=document.getElementById('fixedNav');
+  if(nav.classList.contains('open') && !nav.contains(e.target)) nav.classList.remove('open');
+});
+
+/* ワーク用プロンプトのコピー */
+document.getElementById('copyPromptBtn').addEventListener('click',function(){
+  var btn=this;
+  var text=document.getElementById('promptText').innerText;
+  function done(){btn.textContent='コピーしました';setTimeout(function(){btn.textContent='コピー';},2000);}
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done).catch(function(){fallback();});
+  }else{fallback();}
+  function fallback(){
+    var ta=document.createElement('textarea');
+    ta.value=text;document.body.appendChild(ta);ta.select();
+    try{document.execCommand('copy');done();}catch(err){}
+    document.body.removeChild(ta);
+  }
+});
+
+/* URLハッシュ付きで開いたらそのスライドから開始 */
+var startIdx=0;
+if(location.hash){
+  var h=location.hash.slice(1);
+  var found=slides.findIndex(function(s){return s.id===h;});
+  if(found>=0) startIdx=found;
+}
+show(startIdx);
+</script>
+
+</body>
+</html>
