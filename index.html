@@ -113,6 +113,11 @@ html,body{width:100%;font-family:var(--font-primary);background:var(--color-bg);
 .qr-box{background:#fff;padding:14px;border-radius:8px;flex-shrink:0;line-height:0}
 .qr-note{font-size:var(--text-base);line-height:1.8;color:var(--color-text-secondary);text-align:left}
 .qr-url{font-family:Consolas,'Courier New',monospace;font-size:var(--text-xs);color:var(--color-text-muted);word-break:break-all;margin-top:6px}
+.prompt-row{display:flex;gap:var(--space-xl);align-items:flex-start}
+.prompt-row .prompt-wrap{flex:1;min-width:0}
+.qr-side{flex-shrink:0;width:200px;text-align:center;margin-top:var(--space-md)}
+.qr-side .qr-box{display:inline-block;padding:12px}
+.qr-side .qr-cap{font-size:var(--text-xs);color:var(--color-text-muted);margin-top:8px;line-height:1.6}
 .prompt-box b{color:var(--color-accent)}
 .copy-btn{position:absolute;top:10px;right:10px;background:var(--color-accent);color:#000;border:none;border-radius:6px;padding:6px 14px;font-weight:700;font-size:13px;cursor:pointer;font-family:var(--font-primary)}
 .copy-btn:hover{transform:scale(1.05)}
@@ -171,8 +176,9 @@ button,a{-webkit-tap-highlight-color:transparent}
     <a href="#workexample"><span class="nav-num">└</span>記入例（講師の実物）</a>
     <a href="#discussion"><span class="nav-num">└</span>意見交換・発表の進め方</a>
     <a href="#workmini"><span class="nav-num">✎</span>圧縮版 発信の軸を1行だけ（3分）</a>
-    <a href="#work2"><span class="nav-num">✎</span>ワーク② SNSアカウント診断</a>
-    <a href="#workprompt2"><span class="nav-num">└</span>ワーク② 診断プロンプト</a>
+    <a href="#work2"><span class="nav-num">✎</span>ワーク②③ SNS発信の壁打ち（2コース）</a>
+    <a href="#workprompt2"><span class="nav-num">└</span>ワーク② アカウント診断プロンプト</a>
+    <a href="#workprompt3"><span class="nav-num">└</span>ワーク③ リーチ壁打ちプロンプト</a>
     <a href="#gensoku"><span class="nav-num">◎</span>発信の5原則</a>
     <a href="#action"><span class="nav-num">→</span>明日からの行動指針</a>
     <a href="#end"><span class="nav-num">▶</span>まとめ</a>
@@ -513,7 +519,7 @@ button,a{-webkit-tap-highlight-color:transparent}
       <div class="work-step"><span class="step-time">10分</span><div class="step-body"><b>意見交換</b>：近くの3〜4人で棚卸し結果を見せ合う<div class="step-note">自分では「当たり前」にしか見えないものを、他人の目で「それ、強みですよ」と言ってもらう時間</div></div></div>
       <div class="work-step"><span class="step-time">10分</span><div class="step-body"><b>発表</b>：何名かに「見つかった専門性」と「交差点候補」を発表してもらいます<div class="step-note">1人1分。懇親会の名刺交換のネタにもなります</div></div></div>
       <div class="work-step"><span class="step-time">3分</span><div class="step-body"><b>全員：圧縮版「発信の軸を1行だけ」</b>：ワーク①の結果をAIに貼り、「届けたい層 × 何を発信するか」の軸1行と、最初のポスト案1本を受け取る<div class="step-note">Xで何をどう発信していくか。道筋のひとこと版を持って懇親会へ</div></div></div>
-      <div class="work-step"><span class="step-time">＋α</span><div class="step-body"><b>時間があれば：ワーク② SNSアカウント診断（フル版）</b><div class="step-note">見つけた専門性を「どう伝えるか」まで。プロフィール添削と発信の軸づくり</div></div></div>
+      <div class="work-step"><span class="step-time">＋α</span><div class="step-body"><b>時間があれば：SNS発信の壁打ち（2コースから選択）</b><div class="step-note">ワーク② これから始める人＝アカウント診断 ／ ワーク③ すでに発信している人＝リンクを貼ってリーチ壁打ち（読者に届くか・インプが伸びるか）</div></div></div>
       <div class="lead-box">
         <div style="font-size:var(--text-base);line-height:1.8;">ゴールは、新しい何かを作ることではなく、<span class="text-accent font-bold">すでに持っている強みに気づいて持ち帰ること</span>。特別なことは何も要りません。時間が足りなくなっても大丈夫。<span class="text-white font-bold">スライドとプロンプト全文は共有QRで持ち帰れます</span>（最終スライドに掲載）。</div>
       </div>
@@ -523,7 +529,8 @@ button,a{-webkit-tap-highlight-color:transparent}
   <!-- ===== ワーク① プロンプト全文 ===== -->
   <section id="workprompt" class="slide slide-content">
     <div class="slide-inner">
-      <div class="content-heading">ワーク① 棚卸しプロンプト（コピーしてそのまま使えます）</div>
+      <div class="content-heading">ワーク① 棚卸しプロンプト（QRで読み取れます）</div>
+      <div class="prompt-row">
       <div class="prompt-wrap">
         <button class="copy-btn" data-target="promptText">コピー</button>
         <pre class="prompt-box" id="promptText">あなたはキャリア戦略の壁打ち相手です。
@@ -554,6 +561,11 @@ button,a{-webkit-tap-highlight-color:transparent}
   思っていることほど価値がある前提で探すこと
 - 「経験 × 会計士の専門性」の交差点候補を3つ提案し、
   各候補に「◯◯といえばこの人」と言われる一言ポジションを付ける</pre>
+      </div>
+      <div class="qr-side">
+        <div class="qr-box"><svg width="160" height="160" viewBox="0 0 33 33" shape-rendering="crispEdges" role="img" aria-label="ワーク①プロンプトのQRコード"><path fill="#000" d="M0 0h7v1H0zM9 0h1v1H9zM11 0h2v1H11zM17 0h1v1H17zM19 0h2v1H19zM22 0h3v1H22zM26 0h7v1H26zM0 1h1v1H0zM6 1h1v1H6zM9 1h2v1H9zM15 1h1v1H15zM18 1h1v1H18zM20 1h2v1H20zM26 1h1v1H26zM32 1h1v1H32zM0 2h1v1H0zM2 2h3v1H2zM6 2h1v1H6zM8 2h4v1H8zM14 2h1v1H14zM18 2h4v1H18zM23 2h2v1H23zM26 2h1v1H26zM28 2h3v1H28zM32 2h1v1H32zM0 3h1v1H0zM2 3h3v1H2zM6 3h1v1H6zM8 3h1v1H8zM10 3h1v1H10zM15 3h1v1H15zM17 3h1v1H17zM19 3h1v1H19zM23 3h1v1H23zM26 3h1v1H26zM28 3h3v1H28zM32 3h1v1H32zM0 4h1v1H0zM2 4h3v1H2zM6 4h1v1H6zM8 4h1v1H8zM10 4h7v1H10zM19 4h6v1H19zM26 4h1v1H26zM28 4h3v1H28zM32 4h1v1H32zM0 5h1v1H0zM6 5h1v1H6zM8 5h1v1H8zM10 5h1v1H10zM12 5h3v1H12zM18 5h1v1H18zM21 5h1v1H21zM24 5h1v1H24zM26 5h1v1H26zM32 5h1v1H32zM0 6h7v1H0zM8 6h1v1H8zM10 6h1v1H10zM12 6h1v1H12zM14 6h1v1H14zM16 6h1v1H16zM18 6h1v1H18zM20 6h1v1H20zM22 6h1v1H22zM24 6h1v1H24zM26 6h7v1H26zM8 7h1v1H8zM10 7h2v1H10zM16 7h1v1H16zM18 7h4v1H18zM0 8h1v1H0zM2 8h5v1H2zM10 8h1v1H10zM12 8h3v1H12zM17 8h3v1H17zM24 8h1v1H24zM26 8h5v1H26zM0 9h1v1H0zM11 9h3v1H11zM16 9h1v1H16zM18 9h6v1H18zM26 9h2v1H26zM29 9h2v1H29zM32 9h1v1H32zM0 10h1v1H0zM2 10h3v1H2zM6 10h1v1H6zM8 10h1v1H8zM10 10h1v1H10zM13 10h4v1H13zM20 10h1v1H20zM25 10h2v1H25zM28 10h1v1H28zM30 10h2v1H30zM0 11h1v1H0zM4 11h2v1H4zM7 11h1v1H7zM9 11h1v1H9zM12 11h2v1H12zM15 11h2v1H15zM18 11h5v1H18zM28 11h5v1H28zM1 12h1v1H1zM6 12h2v1H6zM9 12h1v1H9zM11 12h1v1H11zM14 12h2v1H14zM17 12h1v1H17zM19 12h1v1H19zM23 12h3v1H23zM27 12h3v1H27zM31 12h2v1H31zM0 13h2v1H0zM4 13h2v1H4zM7 13h3v1H7zM12 13h2v1H12zM15 13h1v1H15zM17 13h3v1H17zM21 13h3v1H21zM26 13h1v1H26zM31 13h2v1H31zM0 14h1v1H0zM2 14h1v1H2zM4 14h1v1H4zM6 14h1v1H6zM8 14h1v1H8zM12 14h2v1H12zM15 14h3v1H15zM24 14h3v1H24zM30 14h2v1H30zM3 15h3v1H3zM9 15h1v1H9zM12 15h1v1H12zM15 15h1v1H15zM18 15h1v1H18zM21 15h2v1H21zM25 15h3v1H25zM29 15h2v1H29zM1 16h1v1H1zM3 16h1v1H3zM6 16h6v1H6zM13 16h1v1H13zM15 16h3v1H15zM24 16h2v1H24zM27 16h2v1H27zM32 16h1v1H32zM1 17h1v1H1zM3 17h1v1H3zM5 17h1v1H5zM9 17h1v1H9zM12 17h1v1H12zM16 17h8v1H16zM26 17h2v1H26zM29 17h2v1H29zM32 17h1v1H32zM3 18h1v1H3zM5 18h2v1H5zM9 18h1v1H9zM11 18h3v1H11zM15 18h1v1H15zM21 18h2v1H21zM26 18h3v1H26zM30 18h1v1H30zM0 19h1v1H0zM2 19h1v1H2zM8 19h1v1H8zM12 19h4v1H12zM19 19h1v1H19zM21 19h3v1H21zM25 19h8v1H25zM1 20h3v1H1zM5 20h3v1H5zM9 20h1v1H9zM12 20h2v1H12zM16 20h2v1H16zM20 20h1v1H20zM22 20h2v1H22zM27 20h3v1H27zM31 20h2v1H31zM0 21h1v1H0zM2 21h1v1H2zM4 21h2v1H4zM8 21h1v1H8zM11 21h3v1H11zM18 21h4v1H18zM23 21h2v1H23zM26 21h1v1H26zM32 21h1v1H32zM0 22h1v1H0zM3 22h1v1H3zM6 22h1v1H6zM10 22h1v1H10zM15 22h3v1H15zM20 22h1v1H20zM25 22h1v1H25zM27 22h1v1H27zM29 22h1v1H29zM31 22h1v1H31zM0 23h1v1H0zM2 23h2v1H2zM7 23h2v1H7zM11 23h1v1H11zM16 23h1v1H16zM19 23h3v1H19zM23 23h1v1H23zM26 23h1v1H26zM30 23h3v1H30zM0 24h1v1H0zM2 24h2v1H2zM5 24h3v1H5zM10 24h2v1H10zM13 24h3v1H13zM17 24h1v1H17zM19 24h1v1H19zM24 24h5v1H24zM32 24h1v1H32zM8 25h4v1H8zM13 25h2v1H13zM16 25h7v1H16zM24 25h1v1H24zM28 25h1v1H28zM30 25h1v1H30zM32 25h1v1H32zM0 26h7v1H0zM10 26h1v1H10zM13 26h3v1H13zM20 26h1v1H20zM23 26h2v1H23zM26 26h1v1H26zM28 26h1v1H28zM30 26h2v1H30zM0 27h1v1H0zM6 27h1v1H6zM8 27h1v1H8zM15 27h2v1H15zM18 27h1v1H18zM20 27h5v1H20zM28 27h4v1H28zM0 28h1v1H0zM2 28h3v1H2zM6 28h1v1H6zM8 28h6v1H8zM15 28h5v1H15zM24 28h6v1H24zM32 28h1v1H32zM0 29h1v1H0zM2 29h3v1H2zM6 29h1v1H6zM8 29h1v1H8zM11 29h4v1H11zM16 29h4v1H16zM21 29h2v1H21zM25 29h1v1H25zM28 29h2v1H28zM31 29h2v1H31zM0 30h1v1H0zM2 30h3v1H2zM6 30h1v1H6zM8 30h1v1H8zM10 30h2v1H10zM14 30h3v1H14zM18 30h1v1H18zM20 30h1v1H20zM22 30h1v1H22zM24 30h4v1H24zM29 30h2v1H29zM0 31h1v1H0zM6 31h1v1H6zM9 31h4v1H9zM14 31h1v1H14zM21 31h1v1H21zM23 31h1v1H23zM25 31h2v1H25zM28 31h3v1H28zM0 32h7v1H0zM8 32h1v1H8zM13 32h5v1H13zM19 32h1v1H19zM24 32h2v1H24zM27 32h1v1H27zM29 32h1v1H29zM31 32h1v1H31z"/></svg></div>
+        <div class="qr-cap">スマホで読み取ると<br>このプロンプトが開きます<br>（コピーはワンタップ）</div>
+      </div>
       </div>
       <div class="content-body mt-md" style="font-size:var(--text-xs);">
         ポイント：質問2（自分で進めるしかなかった仕事）が、あなただけの専門性の鉱脈です。質問3・4は「クライアント対応の専門性」を掘り当てるための質問。自分では当たり前すぎて書けないことこそ、正直に書いてください。
@@ -618,6 +630,7 @@ button,a{-webkit-tap-highlight-color:transparent}
       <div class="case-tag">圧縮版（3分・全員）</div>
       <div class="content-heading">発信の軸を、<span class="text-accent">1行だけ</span>持ち帰る</div>
       <div class="content-body">ワーク①で見つけた「強みの原石」と「交差点候補」を、そのままAIに貼ってください。3分で「Xで何を発信していくか」のひとこと版ができます。</div>
+      <div class="prompt-row">
       <div class="prompt-wrap">
         <button class="copy-btn" data-target="promptTextMini">コピー</button>
         <pre class="prompt-box" id="promptTextMini">私は公認会計士です。業務の棚卸しワークで、
@@ -630,9 +643,10 @@ button,a{-webkit-tap-highlight-color:transparent}
 - その軸での最初のポスト案を1本だけ書く
   （営業メッセージは入れない。知識・気付きのギブに徹する）</pre>
       </div>
-      <div class="qr-take">
-        <div class="qr-box"><svg width="120" height="120" viewBox="0 0 33 33" shape-rendering="crispEdges" role="img" aria-label="スライド共有URLのQRコード"><path fill="#000" d="M0 0h7v1H0zM9 0h2v1H9zM12 0h2v1H12zM17 0h1v1H17zM19 0h2v1H19zM22 0h3v1H22zM26 0h7v1H26zM0 1h1v1H0zM6 1h1v1H6zM11 1h5v1H11zM17 1h1v1H17zM20 1h2v1H20zM26 1h1v1H26zM32 1h1v1H32zM0 2h1v1H0zM2 2h3v1H2zM6 2h1v1H6zM8 2h1v1H8zM10 2h2v1H10zM13 2h1v1H13zM17 2h5v1H17zM23 2h2v1H23zM26 2h1v1H26zM28 2h3v1H28zM32 2h1v1H32zM0 3h1v1H0zM2 3h3v1H2zM6 3h1v1H6zM8 3h1v1H8zM10 3h1v1H10zM14 3h3v1H14zM19 3h2v1H19zM23 3h1v1H23zM26 3h1v1H26zM28 3h3v1H28zM32 3h1v1H32zM0 4h1v1H0zM2 4h3v1H2zM6 4h1v1H6zM8 4h3v1H8zM13 4h1v1H13zM15 4h1v1H15zM18 4h1v1H18zM21 4h4v1H21zM26 4h1v1H26zM28 4h3v1H28zM32 4h1v1H32zM0 5h1v1H0zM6 5h1v1H6zM8 5h1v1H8zM10 5h2v1H10zM13 5h4v1H13zM18 5h1v1H18zM20 5h2v1H20zM24 5h1v1H24zM26 5h1v1H26zM32 5h1v1H32zM0 6h7v1H0zM8 6h1v1H8zM10 6h1v1H10zM12 6h1v1H12zM14 6h1v1H14zM16 6h1v1H16zM18 6h1v1H18zM20 6h1v1H20zM22 6h1v1H22zM24 6h1v1H24zM26 6h7v1H26zM8 7h1v1H8zM10 7h2v1H10zM15 7h1v1H15zM18 7h1v1H18zM21 7h1v1H21zM0 8h1v1H0zM2 8h5v1H2zM11 8h5v1H11zM17 8h2v1H17zM24 8h1v1H24zM26 8h5v1H26zM0 9h1v1H0zM4 9h2v1H4zM7 9h1v1H7zM9 9h4v1H9zM16 9h1v1H16zM18 9h6v1H18zM26 9h2v1H26zM29 9h2v1H29zM32 9h1v1H32zM0 10h1v1H0zM2 10h2v1H2zM6 10h2v1H6zM9 10h1v1H9zM15 10h2v1H15zM18 10h1v1H18zM20 10h1v1H20zM25 10h2v1H25zM28 10h1v1H28zM30 10h2v1H30zM0 11h3v1H0zM5 11h1v1H5zM8 11h5v1H8zM14 11h3v1H14zM19 11h4v1H19zM28 11h5v1H28zM0 12h2v1H0zM3 12h5v1H3zM11 12h1v1H11zM15 12h1v1H15zM18 12h2v1H18zM23 12h3v1H23zM27 12h3v1H27zM31 12h2v1H31zM1 13h5v1H1zM7 13h2v1H7zM10 13h3v1H10zM14 13h4v1H14zM20 13h4v1H20zM26 13h1v1H26zM31 13h2v1H31zM0 14h2v1H0zM6 14h1v1H6zM8 14h1v1H8zM11 14h1v1H11zM13 14h1v1H13zM17 14h1v1H17zM19 14h1v1H19zM24 14h3v1H24zM30 14h2v1H30zM1 15h3v1H1zM5 15h1v1H5zM7 15h1v1H7zM10 15h5v1H10zM16 15h1v1H16zM18 15h5v1H18zM25 15h3v1H25zM29 15h2v1H29zM0 16h7v1H0zM9 16h1v1H9zM12 16h1v1H12zM14 16h1v1H14zM16 16h2v1H16zM19 16h1v1H19zM24 16h2v1H24zM27 16h2v1H27zM32 16h1v1H32zM2 17h1v1H2zM4 17h2v1H4zM8 17h1v1H8zM11 17h1v1H11zM16 17h8v1H16zM26 17h2v1H26zM29 17h2v1H29zM32 17h1v1H32zM3 18h2v1H3zM6 18h2v1H6zM10 18h2v1H10zM13 18h3v1H13zM17 18h1v1H17zM21 18h2v1H21zM26 18h3v1H26zM30 18h1v1H30zM0 19h4v1H0zM8 19h1v1H8zM11 19h1v1H11zM15 19h1v1H15zM17 19h3v1H17zM21 19h3v1H21zM25 19h8v1H25zM0 20h7v1H0zM10 20h5v1H10zM16 20h1v1H16zM22 20h2v1H22zM27 20h3v1H27zM31 20h2v1H31zM0 21h4v1H0zM10 21h2v1H10zM13 21h3v1H13zM18 21h1v1H18zM21 21h1v1H21zM23 21h2v1H23zM26 21h1v1H26zM32 21h1v1H32zM0 22h1v1H0zM2 22h2v1H2zM5 22h5v1H5zM14 22h4v1H14zM20 22h1v1H20zM25 22h1v1H25zM27 22h1v1H27zM29 22h1v1H29zM31 22h1v1H31zM0 23h1v1H0zM4 23h2v1H4zM11 23h2v1H11zM15 23h1v1H15zM19 23h3v1H19zM23 23h1v1H23zM26 23h1v1H26zM30 23h1v1H30zM32 23h1v1H32zM0 24h1v1H0zM6 24h2v1H6zM10 24h1v1H10zM12 24h4v1H12zM17 24h1v1H17zM19 24h1v1H19zM24 24h5v1H24zM8 25h2v1H8zM11 25h1v1H11zM16 25h1v1H16zM18 25h5v1H18zM24 25h1v1H24zM28 25h1v1H28zM30 25h1v1H30zM32 25h1v1H32zM0 26h7v1H0zM9 26h2v1H9zM13 26h3v1H13zM18 26h1v1H18zM20 26h1v1H20zM23 26h2v1H23zM26 26h1v1H26zM28 26h1v1H28zM30 26h2v1H30zM0 27h1v1H0zM6 27h1v1H6zM8 27h1v1H8zM10 27h1v1H10zM15 27h2v1H15zM20 27h5v1H20zM28 27h4v1H28zM0 28h1v1H0zM2 28h3v1H2zM6 28h1v1H6zM8 28h4v1H8zM15 28h1v1H15zM18 28h2v1H18zM24 28h6v1H24zM32 28h1v1H32zM0 29h1v1H0zM2 29h3v1H2zM6 29h1v1H6zM8 29h1v1H8zM10 29h1v1H10zM12 29h2v1H12zM15 29h3v1H15zM19 29h1v1H19zM21 29h2v1H21zM25 29h1v1H25zM28 29h2v1H28zM31 29h2v1H31zM0 30h1v1H0zM2 30h3v1H2zM6 30h1v1H6zM8 30h2v1H8zM11 30h4v1H11zM18 30h1v1H18zM20 30h1v1H20zM22 30h1v1H22zM24 30h4v1H24zM29 30h2v1H29zM0 31h1v1H0zM6 31h1v1H6zM9 31h3v1H9zM13 31h2v1H13zM16 31h1v1H16zM21 31h1v1H21zM23 31h1v1H23zM25 31h2v1H25zM28 31h3v1H28zM0 32h7v1H0zM8 32h2v1H8zM11 32h1v1H11zM13 32h2v1H13zM16 32h2v1H16zM19 32h1v1H19zM24 32h2v1H24zM27 32h1v1H27zM29 32h1v1H29zM31 32h1v1H31z"/></svg></div>
-        <div class="qr-note">時間が足りなかった方も大丈夫。このQRから<b class="text-white">今日のスライドとプロンプト全文</b>をいつでも開けます。ワーク②フル版（プロフィール添削・1週間分のポスト案5本）は、自宅で10分でできます。<div class="qr-url">https://fromk0326-boop.github.io/hk-talk-74d835c9/</div></div>
+      <div class="qr-side">
+        <div class="qr-box"><svg width="160" height="160" viewBox="0 0 33 33" shape-rendering="crispEdges" role="img" aria-label="圧縮版プロンプトのQRコード"><path fill="#000" d="M0 0h7v1H0zM9 0h1v1H9zM12 0h2v1H12zM17 0h1v1H17zM19 0h2v1H19zM22 0h3v1H22zM26 0h7v1H26zM0 1h1v1H0zM6 1h1v1H6zM10 1h2v1H10zM15 1h1v1H15zM18 1h1v1H18zM20 1h2v1H20zM26 1h1v1H26zM32 1h1v1H32zM0 2h1v1H0zM2 2h3v1H2zM6 2h1v1H6zM8 2h4v1H8zM14 2h1v1H14zM18 2h4v1H18zM23 2h2v1H23zM26 2h1v1H26zM28 2h3v1H28zM32 2h1v1H32zM0 3h1v1H0zM2 3h3v1H2zM6 3h1v1H6zM8 3h1v1H8zM12 3h1v1H12zM15 3h1v1H15zM17 3h1v1H17zM19 3h1v1H19zM23 3h1v1H23zM26 3h1v1H26zM28 3h3v1H28zM32 3h1v1H32zM0 4h1v1H0zM2 4h3v1H2zM6 4h1v1H6zM8 4h1v1H8zM10 4h1v1H10zM12 4h2v1H12zM16 4h1v1H16zM19 4h6v1H19zM26 4h1v1H26zM28 4h3v1H28zM32 4h1v1H32zM0 5h1v1H0zM6 5h1v1H6zM8 5h2v1H8zM11 5h5v1H11zM18 5h1v1H18zM21 5h1v1H21zM24 5h1v1H24zM26 5h1v1H26zM32 5h1v1H32zM0 6h7v1H0zM8 6h1v1H8zM10 6h1v1H10zM12 6h1v1H12zM14 6h1v1H14zM16 6h1v1H16zM18 6h1v1H18zM20 6h1v1H20zM22 6h1v1H22zM24 6h1v1H24zM26 6h7v1H26zM8 7h3v1H8zM12 7h1v1H12zM16 7h1v1H16zM18 7h4v1H18zM0 8h1v1H0zM2 8h5v1H2zM9 8h1v1H9zM11 8h1v1H11zM13 8h2v1H13zM17 8h3v1H17zM24 8h1v1H24zM26 8h5v1H26zM1 9h1v1H1zM4 9h1v1H4zM8 9h1v1H8zM11 9h3v1H11zM16 9h1v1H16zM18 9h6v1H18zM26 9h2v1H26zM29 9h2v1H29zM32 9h1v1H32zM2 10h3v1H2zM6 10h1v1H6zM10 10h1v1H10zM13 10h4v1H13zM20 10h1v1H20zM25 10h2v1H25zM28 10h1v1H28zM30 10h2v1H30zM1 11h2v1H1zM5 11h1v1H5zM8 11h2v1H8zM11 11h3v1H11zM15 11h2v1H15zM18 11h5v1H18zM28 11h5v1H28zM1 12h2v1H1zM4 12h3v1H4zM8 12h1v1H8zM10 12h1v1H10zM14 12h2v1H14zM17 12h1v1H17zM19 12h1v1H19zM23 12h3v1H23zM27 12h3v1H27zM31 12h2v1H31zM1 13h1v1H1zM3 13h1v1H3zM5 13h1v1H5zM7 13h1v1H7zM10 13h4v1H10zM16 13h4v1H16zM21 13h3v1H21zM26 13h1v1H26zM31 13h2v1H31zM0 14h1v1H0zM2 14h1v1H2zM6 14h2v1H6zM9 14h1v1H9zM14 14h4v1H14zM24 14h3v1H24zM30 14h2v1H30zM2 15h4v1H2zM7 15h1v1H7zM9 15h3v1H9zM15 15h1v1H15zM18 15h1v1H18zM21 15h2v1H21zM25 15h3v1H25zM29 15h2v1H29zM2 16h2v1H2zM5 16h3v1H5zM13 16h2v1H13zM16 16h2v1H16zM24 16h2v1H24zM27 16h2v1H27zM32 16h1v1H32zM1 17h1v1H1zM4 17h1v1H4zM13 17h1v1H13zM16 17h8v1H16zM26 17h2v1H26zM29 17h2v1H29zM32 17h1v1H32zM4 18h1v1H4zM6 18h1v1H6zM9 18h1v1H9zM13 18h1v1H13zM15 18h1v1H15zM21 18h2v1H21zM26 18h3v1H26zM30 18h1v1H30zM0 19h2v1H0zM5 19h1v1H5zM8 19h1v1H8zM12 19h2v1H12zM15 19h1v1H15zM19 19h1v1H19zM21 19h3v1H21zM25 19h8v1H25zM0 20h3v1H0zM4 20h1v1H4zM6 20h3v1H6zM11 20h2v1H11zM14 20h1v1H14zM17 20h1v1H17zM20 20h1v1H20zM22 20h2v1H22zM27 20h3v1H27zM31 20h2v1H31zM0 21h2v1H0zM3 21h1v1H3zM7 21h5v1H7zM13 21h1v1H13zM16 21h1v1H16zM18 21h4v1H18zM23 21h2v1H23zM26 21h1v1H26zM32 21h1v1H32zM0 22h1v1H0zM2 22h1v1H2zM6 22h2v1H6zM10 22h1v1H10zM13 22h1v1H13zM15 22h3v1H15zM20 22h1v1H20zM25 22h1v1H25zM27 22h1v1H27zM29 22h1v1H29zM31 22h1v1H31zM0 23h1v1H0zM3 23h1v1H3zM7 23h2v1H7zM10 23h2v1H10zM14 23h3v1H14zM19 23h3v1H19zM23 23h1v1H23zM26 23h1v1H26zM30 23h2v1H30zM0 24h1v1H0zM2 24h2v1H2zM5 24h2v1H5zM9 24h1v1H9zM12 24h1v1H12zM17 24h1v1H17zM19 24h1v1H19zM24 24h5v1H24zM31 24h2v1H31zM8 25h2v1H8zM11 25h1v1H11zM14 25h1v1H14zM16 25h7v1H16zM24 25h1v1H24zM28 25h1v1H28zM30 25h1v1H30zM32 25h1v1H32zM0 26h7v1H0zM11 26h1v1H11zM13 26h3v1H13zM20 26h1v1H20zM23 26h2v1H23zM26 26h1v1H26zM28 26h1v1H28zM30 26h2v1H30zM0 27h1v1H0zM6 27h1v1H6zM8 27h1v1H8zM10 27h4v1H10zM15 27h2v1H15zM18 27h1v1H18zM20 27h5v1H20zM28 27h4v1H28zM0 28h1v1H0zM2 28h3v1H2zM6 28h1v1H6zM8 28h4v1H8zM13 28h1v1H13zM15 28h1v1H15zM17 28h3v1H17zM24 28h6v1H24zM32 28h1v1H32zM0 29h1v1H0zM2 29h3v1H2zM6 29h1v1H6zM8 29h1v1H8zM11 29h1v1H11zM14 29h1v1H14zM16 29h4v1H16zM21 29h2v1H21zM25 29h1v1H25zM28 29h2v1H28zM31 29h2v1H31zM0 30h1v1H0zM2 30h3v1H2zM6 30h1v1H6zM8 30h4v1H8zM15 30h2v1H15zM18 30h1v1H18zM20 30h1v1H20zM22 30h1v1H22zM24 30h4v1H24zM29 30h2v1H29zM0 31h1v1H0zM6 31h1v1H6zM10 31h1v1H10zM12 31h3v1H12zM21 31h1v1H21zM23 31h1v1H23zM25 31h2v1H25zM28 31h3v1H28zM0 32h7v1H0zM8 32h1v1H8zM10 32h1v1H10zM15 32h3v1H15zM19 32h1v1H19zM24 32h2v1H24zM27 32h1v1H27zM29 32h1v1H29zM31 32h1v1H31z"/></svg></div>
+        <div class="qr-cap">スマホで読み取ると<br>このプロンプトが開きます<br>（コピーはワンタップ）</div>
+      </div>
       </div>
     </div>
   </section>
@@ -640,23 +654,27 @@ button,a{-webkit-tap-highlight-color:transparent}
   <!-- ===== ワーク② SNSアカウント診断 ===== -->
   <section id="work2" class="slide slide-content">
     <div class="slide-inner">
-      <div class="case-tag">WORK ②（時間があれば）</div>
-      <div class="content-heading">SNSアカウント診断。発信の軸をAIと壁打ちする</div>
-      <div class="content-body">見つけた専門性を「どう伝えるか」まで作るおまけワークです。今のXアカウントをAIに診断してもらい、改善提案まで受け取ります。</div>
+      <div class="case-tag">WORK ②③（時間があれば）</div>
+      <div class="content-heading">SNS発信の壁打ち。今の自分に合うコースをひとつ</div>
+      <div class="content-body">見つけた専門性を「どう伝えて、どう届けるか」まで作るワークです。発信の現在地で選んでください。</div>
       <div class="two-col">
         <div class="col-card accent">
-          <div class="col-card-label">診断してもらえること</div>
+          <div class="col-card-label">ワーク②｜これから始める人・立て直したい人</div>
+          <div class="col-card-title">SNSアカウント診断</div>
           <div class="col-card-desc" style="font-size:var(--text-base);line-height:2.0;">
             <b class="text-white">プロフィール文</b>：何の専門家か3秒で伝わるか。改善案3パターン<br>
-            <b class="text-white">投稿テーマの一貫性</b>：テーマが散らばっていないか<br>
             <b class="text-white">発信の軸</b>：届けたい層 × 何を発信するか<br>
-            <b class="text-white">ポスト案5本</b>：その軸での最初の1週間分
+            <b class="text-white">ポスト案5本</b>：その軸での最初の1週間分<br>
+            未発信ならゼロからの<b class="text-white">アカウント設計</b>を提案
           </div>
         </div>
-        <div class="col-card">
-          <div class="col-card-label">まだ発信していない人</div>
+        <div class="col-card accent">
+          <div class="col-card-label">ワーク③｜すでにX・noteで発信している人</div>
+          <div class="col-card-title">リーチ壁打ち</div>
           <div class="col-card-desc" style="font-size:var(--text-base);line-height:2.0;">
-            その旨をAIに伝えれば、<b class="text-white">ゼロから始める前提でアカウント設計から</b>提案してもらえます。ワーク①で見つけた交差点を貼り付けるのがコツ。
+            アカウント・記事の<b class="text-white">リンクを貼って診断</b><br>
+            <b class="text-white">読んでほしい読者に届かない原因</b>を、テーマ・書き出し・形式で特定<br>
+            <b class="text-white">インプレッションを伸ばす改善案3つ</b>＋刺さる切り口の投稿案2本
           </div>
         </div>
       </div>
@@ -669,7 +687,8 @@ button,a{-webkit-tap-highlight-color:transparent}
   <!-- ===== ワーク② プロンプト全文 ===== -->
   <section id="workprompt2" class="slide slide-content">
     <div class="slide-inner">
-      <div class="content-heading">ワーク② 診断プロンプト（コピーしてそのまま使えます）</div>
+      <div class="content-heading">ワーク② 診断プロンプト（QRで読み取れます）</div>
+      <div class="prompt-row">
       <div class="prompt-wrap">
         <button class="copy-btn" data-target="promptText2">コピー</button>
         <pre class="prompt-box" id="promptText2">あなたはSNS発信戦略の壁打ち相手です。
@@ -694,8 +713,53 @@ button,a{-webkit-tap-highlight-color:transparent}
 まだ発信していない場合はその旨を伝えるので、
 ゼロから始める前提でアカウント設計から提案してください。</pre>
       </div>
+      <div class="qr-side">
+        <div class="qr-box"><svg width="160" height="160" viewBox="0 0 33 33" shape-rendering="crispEdges" role="img" aria-label="ワーク②プロンプトのQRコード"><path fill="#000" d="M0 0h7v1H0zM9 0h1v1H9zM11 0h2v1H11zM17 0h1v1H17zM19 0h2v1H19zM22 0h3v1H22zM26 0h7v1H26zM0 1h1v1H0zM6 1h1v1H6zM15 1h1v1H15zM18 1h1v1H18zM20 1h2v1H20zM26 1h1v1H26zM32 1h1v1H32zM0 2h1v1H0zM2 2h3v1H2zM6 2h1v1H6zM8 2h1v1H8zM10 2h2v1H10zM14 2h1v1H14zM18 2h4v1H18zM23 2h2v1H23zM26 2h1v1H26zM28 2h3v1H28zM32 2h1v1H32zM0 3h1v1H0zM2 3h3v1H2zM6 3h1v1H6zM8 3h3v1H8zM12 3h1v1H12zM15 3h1v1H15zM17 3h1v1H17zM19 3h1v1H19zM23 3h1v1H23zM26 3h1v1H26zM28 3h3v1H28zM32 3h1v1H32zM0 4h1v1H0zM2 4h3v1H2zM6 4h1v1H6zM8 4h1v1H8zM13 4h4v1H13zM19 4h6v1H19zM26 4h1v1H26zM28 4h3v1H28zM32 4h1v1H32zM0 5h1v1H0zM6 5h1v1H6zM8 5h1v1H8zM10 5h1v1H10zM13 5h2v1H13zM18 5h1v1H18zM21 5h1v1H21zM24 5h1v1H24zM26 5h1v1H26zM32 5h1v1H32zM0 6h7v1H0zM8 6h1v1H8zM10 6h1v1H10zM12 6h1v1H12zM14 6h1v1H14zM16 6h1v1H16zM18 6h1v1H18zM20 6h1v1H20zM22 6h1v1H22zM24 6h1v1H24zM26 6h7v1H26zM8 7h1v1H8zM10 7h1v1H10zM12 7h1v1H12zM16 7h1v1H16zM18 7h4v1H18zM0 8h1v1H0zM2 8h5v1H2zM10 8h1v1H10zM12 8h3v1H12zM17 8h3v1H17zM24 8h1v1H24zM26 8h5v1H26zM4 9h1v1H4zM11 9h3v1H11zM16 9h1v1H16zM18 9h6v1H18zM26 9h2v1H26zM29 9h2v1H29zM32 9h1v1H32zM2 10h2v1H2zM5 10h2v1H5zM8 10h1v1H8zM10 10h1v1H10zM13 10h4v1H13zM20 10h1v1H20zM25 10h2v1H25zM28 10h1v1H28zM30 10h2v1H30zM4 11h2v1H4zM7 11h1v1H7zM9 11h1v1H9zM12 11h2v1H12zM15 11h2v1H15zM18 11h5v1H18zM28 11h5v1H28zM4 12h6v1H4zM11 12h2v1H11zM14 12h2v1H14zM17 12h1v1H17zM19 12h1v1H19zM23 12h3v1H23zM27 12h3v1H27zM31 12h2v1H31zM0 13h1v1H0zM2 13h3v1H2zM7 13h1v1H7zM9 13h2v1H9zM13 13h1v1H13zM15 13h1v1H15zM17 13h3v1H17zM21 13h3v1H21zM26 13h1v1H26zM31 13h2v1H31zM0 14h1v1H0zM2 14h1v1H2zM4 14h1v1H4zM6 14h3v1H6zM11 14h3v1H11zM15 14h1v1H15zM17 14h1v1H17zM24 14h3v1H24zM30 14h2v1H30zM3 15h3v1H3zM7 15h3v1H7zM11 15h2v1H11zM18 15h1v1H18zM21 15h2v1H21zM25 15h3v1H25zM29 15h2v1H29zM1 16h1v1H1zM3 16h1v1H3zM6 16h1v1H6zM8 16h3v1H8zM13 16h1v1H13zM15 16h3v1H15zM24 16h2v1H24zM27 16h2v1H27zM32 16h1v1H32zM1 17h1v1H1zM3 17h1v1H3zM5 17h1v1H5zM9 17h1v1H9zM12 17h1v1H12zM16 17h8v1H16zM26 17h2v1H26zM29 17h2v1H29zM32 17h1v1H32zM3 18h1v1H3zM6 18h1v1H6zM10 18h3v1H10zM15 18h1v1H15zM21 18h2v1H21zM26 18h3v1H26zM30 18h1v1H30zM2 19h1v1H2zM4 19h2v1H4zM8 19h1v1H8zM10 19h1v1H10zM12 19h4v1H12zM19 19h1v1H19zM21 19h3v1H21zM25 19h8v1H25zM1 20h3v1H1zM5 20h3v1H5zM9 20h1v1H9zM14 20h1v1H14zM16 20h2v1H16zM20 20h1v1H20zM22 20h2v1H22zM27 20h3v1H27zM31 20h2v1H31zM0 21h1v1H0zM2 21h3v1H2zM7 21h1v1H7zM11 21h3v1H11zM18 21h4v1H18zM23 21h2v1H23zM26 21h1v1H26zM32 21h1v1H32zM0 22h1v1H0zM3 22h1v1H3zM6 22h1v1H6zM10 22h3v1H10zM15 22h3v1H15zM20 22h1v1H20zM25 22h1v1H25zM27 22h1v1H27zM29 22h1v1H29zM31 22h1v1H31zM0 23h1v1H0zM2 23h1v1H2zM7 23h1v1H7zM12 23h1v1H12zM16 23h1v1H16zM19 23h3v1H19zM23 23h1v1H23zM26 23h1v1H26zM30 23h3v1H30zM0 24h1v1H0zM3 24h1v1H3zM5 24h3v1H5zM10 24h2v1H10zM13 24h3v1H13zM17 24h1v1H17zM19 24h1v1H19zM24 24h5v1H24zM32 24h1v1H32zM8 25h4v1H8zM13 25h2v1H13zM16 25h7v1H16zM24 25h1v1H24zM28 25h1v1H28zM30 25h1v1H30zM32 25h1v1H32zM0 26h7v1H0zM10 26h1v1H10zM15 26h1v1H15zM20 26h1v1H20zM23 26h2v1H23zM26 26h1v1H26zM28 26h1v1H28zM30 26h2v1H30zM0 27h1v1H0zM6 27h1v1H6zM8 27h1v1H8zM10 27h1v1H10zM14 27h3v1H14zM18 27h1v1H18zM20 27h5v1H20zM28 27h4v1H28zM0 28h1v1H0zM2 28h3v1H2zM6 28h1v1H6zM8 28h1v1H8zM11 28h9v1H11zM24 28h6v1H24zM32 28h1v1H32zM0 29h1v1H0zM2 29h3v1H2zM6 29h1v1H6zM8 29h1v1H8zM13 29h1v1H13zM16 29h4v1H16zM21 29h2v1H21zM25 29h1v1H25zM28 29h2v1H28zM31 29h2v1H31zM0 30h1v1H0zM2 30h3v1H2zM6 30h1v1H6zM8 30h1v1H8zM10 30h1v1H10zM12 30h1v1H12zM14 30h3v1H14zM18 30h1v1H18zM20 30h1v1H20zM22 30h1v1H22zM24 30h4v1H24zM29 30h2v1H29zM0 31h1v1H0zM6 31h1v1H6zM9 31h2v1H9zM12 31h1v1H12zM14 31h1v1H14zM21 31h1v1H21zM23 31h1v1H23zM25 31h2v1H25zM28 31h3v1H28zM0 32h7v1H0zM8 32h1v1H8zM11 32h1v1H11zM13 32h5v1H13zM19 32h1v1H19zM24 32h2v1H24zM27 32h1v1H27zM29 32h1v1H29zM31 32h1v1H31z"/></svg></div>
+        <div class="qr-cap">スマホで読み取ると<br>このプロンプトが開きます<br>（コピーはワンタップ）</div>
+      </div>
+      </div>
       <div class="content-body mt-md" style="font-size:var(--text-xs);">
         ポイント：3にワーク①の結果を貼り付けると、棚卸しした専門性と発信の軸が一本につながります。診断結果に納得できなければ「もっと◯◯寄りに」と返して、AIと往復してください。
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ワーク③ リーチ壁打ち プロンプト ===== -->
+  <section id="workprompt3" class="slide slide-content">
+    <div class="slide-inner">
+      <div class="content-heading">ワーク③ リーチ壁打ちプロンプト（QRで読み取れます）</div>
+      <div class="prompt-row">
+      <div class="prompt-wrap">
+        <button class="copy-btn" data-target="promptText3">コピー</button>
+        <pre class="prompt-box" id="promptText3">あなたはSNS発信戦略の壁打ち相手です。
+私は公認会計士で、Xやnoteですでに発信しています。
+私の発信が「読んでほしい読者」に届き、インプレッションが
+伸びるように、壁打ちに付き合ってください。
+
+# 私の情報
+1. アカウント・記事のURL（X・noteなど。複数OK）：
+2. 読んでほしい読者（例：シード起業家、クリニック院長、同業の会計士）：
+3. 伸ばしたい投稿・手応えのあった投稿（あればURLか内容）：
+
+# お願いすること
+- 今の発信が「誰に届く書き方になっているか」を診断する
+- 読んでほしい読者に届いていない原因を、テーマの一貫性・
+  書き出しの1行目・形式（長文/短文・画像の有無）の観点で指摘する
+- インプレッションを伸ばす改善案を3つ、優先順位付きで提案する
+- 手持ちのテーマを「読者に刺さる切り口」に変換した投稿案を2本書く
+  （営業メッセージは入れない。知識・気付きのギブに徹する）
+
+# 進め方
+一度に全部出さず、まず診断を見せてください。
+私の反応を聞きながら、往復で深掘りしてください。</pre>
+      </div>
+      <div class="qr-side">
+        <div class="qr-box"><svg width="160" height="160" viewBox="0 0 33 33" shape-rendering="crispEdges" role="img" aria-label="ワーク③プロンプトのQRコード"><path fill="#000" d="M0 0h7v1H0zM11 0h2v1H11zM17 0h1v1H17zM19 0h2v1H19zM22 0h3v1H22zM26 0h7v1H26zM0 1h1v1H0zM6 1h1v1H6zM10 1h1v1H10zM15 1h1v1H15zM18 1h1v1H18zM20 1h2v1H20zM26 1h1v1H26zM32 1h1v1H32zM0 2h1v1H0zM2 2h3v1H2zM6 2h1v1H6zM8 2h1v1H8zM11 2h1v1H11zM14 2h1v1H14zM18 2h4v1H18zM23 2h2v1H23zM26 2h1v1H26zM28 2h3v1H28zM32 2h1v1H32zM0 3h1v1H0zM2 3h3v1H2zM6 3h1v1H6zM8 3h1v1H8zM10 3h1v1H10zM15 3h1v1H15zM17 3h1v1H17zM19 3h1v1H19zM23 3h1v1H23zM26 3h1v1H26zM28 3h3v1H28zM32 3h1v1H32zM0 4h1v1H0zM2 4h3v1H2zM6 4h1v1H6zM8 4h1v1H8zM12 4h5v1H12zM19 4h6v1H19zM26 4h1v1H26zM28 4h3v1H28zM32 4h1v1H32zM0 5h1v1H0zM6 5h1v1H6zM8 5h1v1H8zM10 5h2v1H10zM13 5h2v1H13zM18 5h1v1H18zM21 5h1v1H21zM24 5h1v1H24zM26 5h1v1H26zM32 5h1v1H32zM0 6h7v1H0zM8 6h1v1H8zM10 6h1v1H10zM12 6h1v1H12zM14 6h1v1H14zM16 6h1v1H16zM18 6h1v1H18zM20 6h1v1H20zM22 6h1v1H22zM24 6h1v1H24zM26 6h7v1H26zM8 7h1v1H8zM10 7h3v1H10zM16 7h1v1H16zM18 7h4v1H18zM0 8h1v1H0zM2 8h5v1H2zM10 8h1v1H10zM12 8h3v1H12zM17 8h3v1H17zM24 8h1v1H24zM26 8h5v1H26zM0 9h1v1H0zM4 9h1v1H4zM9 9h1v1H9zM11 9h3v1H11zM16 9h1v1H16zM18 9h6v1H18zM26 9h2v1H26zM29 9h2v1H29zM32 9h1v1H32zM2 10h2v1H2zM6 10h1v1H6zM8 10h2v1H8zM13 10h4v1H13zM20 10h1v1H20zM25 10h2v1H25zM28 10h1v1H28zM30 10h2v1H30zM1 11h1v1H1zM7 11h1v1H7zM9 11h2v1H9zM12 11h2v1H12zM15 11h2v1H15zM18 11h5v1H18zM28 11h5v1H28zM4 12h1v1H4zM6 12h2v1H6zM9 12h4v1H9zM14 12h2v1H14zM17 12h1v1H17zM19 12h1v1H19zM23 12h3v1H23zM27 12h3v1H27zM31 12h2v1H31zM0 13h1v1H0zM3 13h3v1H3zM9 13h2v1H9zM13 13h1v1H13zM15 13h1v1H15zM17 13h3v1H17zM21 13h3v1H21zM26 13h1v1H26zM31 13h2v1H31zM0 14h1v1H0zM2 14h1v1H2zM4 14h1v1H4zM6 14h1v1H6zM11 14h1v1H11zM13 14h1v1H13zM15 14h3v1H15zM24 14h3v1H24zM30 14h2v1H30zM3 15h3v1H3zM7 15h1v1H7zM9 15h1v1H9zM11 15h2v1H11zM18 15h1v1H18zM21 15h2v1H21zM25 15h3v1H25zM29 15h2v1H29zM1 16h1v1H1zM3 16h1v1H3zM6 16h1v1H6zM8 16h4v1H8zM13 16h1v1H13zM15 16h3v1H15zM24 16h2v1H24zM27 16h2v1H27zM32 16h1v1H32zM0 17h2v1H0zM3 17h1v1H3zM5 17h1v1H5zM12 17h2v1H12zM16 17h8v1H16zM26 17h2v1H26zM29 17h2v1H29zM32 17h1v1H32zM0 18h2v1H0zM3 18h2v1H3zM6 18h1v1H6zM11 18h5v1H11zM21 18h2v1H21zM26 18h3v1H26zM30 18h1v1H30zM1 19h2v1H1zM4 19h1v1H4zM8 19h2v1H8zM12 19h1v1H12zM14 19h2v1H14zM19 19h1v1H19zM21 19h3v1H21zM25 19h8v1H25zM0 20h3v1H0zM4 20h1v1H4zM6 20h3v1H6zM14 20h1v1H14zM16 20h2v1H16zM20 20h1v1H20zM22 20h2v1H22zM27 20h3v1H27zM31 20h2v1H31zM0 21h2v1H0zM4 21h2v1H4zM7 21h1v1H7zM10 21h2v1H10zM13 21h2v1H13zM18 21h4v1H18zM23 21h2v1H23zM26 21h1v1H26zM32 21h1v1H32zM0 22h1v1H0zM6 22h2v1H6zM10 22h1v1H10zM15 22h3v1H15zM20 22h1v1H20zM25 22h1v1H25zM27 22h1v1H27zM29 22h1v1H29zM31 22h1v1H31zM0 23h1v1H0zM7 23h2v1H7zM16 23h1v1H16zM19 23h3v1H19zM23 23h1v1H23zM26 23h1v1H26zM30 23h3v1H30zM0 24h1v1H0zM2 24h2v1H2zM5 24h2v1H5zM10 24h1v1H10zM13 24h3v1H13zM17 24h1v1H17zM19 24h1v1H19zM24 24h5v1H24zM32 24h1v1H32zM8 25h1v1H8zM10 25h2v1H10zM14 25h1v1H14zM16 25h7v1H16zM24 25h1v1H24zM28 25h1v1H28zM30 25h1v1H30zM32 25h1v1H32zM0 26h7v1H0zM9 26h1v1H9zM14 26h2v1H14zM20 26h1v1H20zM23 26h2v1H23zM26 26h1v1H26zM28 26h1v1H28zM30 26h2v1H30zM0 27h1v1H0zM6 27h1v1H6zM8 27h2v1H8zM13 27h1v1H13zM15 27h2v1H15zM18 27h1v1H18zM20 27h5v1H20zM28 27h4v1H28zM0 28h1v1H0zM2 28h3v1H2zM6 28h1v1H6zM8 28h1v1H8zM11 28h9v1H11zM24 28h6v1H24zM32 28h1v1H32zM0 29h1v1H0zM2 29h3v1H2zM6 29h1v1H6zM8 29h1v1H8zM10 29h2v1H10zM13 29h1v1H13zM16 29h4v1H16zM21 29h2v1H21zM25 29h1v1H25zM28 29h2v1H28zM31 29h2v1H31zM0 30h1v1H0zM2 30h3v1H2zM6 30h1v1H6zM8 30h1v1H8zM10 30h3v1H10zM14 30h3v1H14zM18 30h1v1H18zM20 30h1v1H20zM22 30h1v1H22zM24 30h4v1H24zM29 30h2v1H29zM0 31h1v1H0zM6 31h1v1H6zM9 31h3v1H9zM14 31h1v1H14zM21 31h1v1H21zM23 31h1v1H23zM25 31h2v1H25zM28 31h3v1H28zM0 32h7v1H0zM8 32h1v1H8zM11 32h1v1H11zM13 32h5v1H13zM19 32h1v1H19zM24 32h2v1H24zM27 32h1v1H27zM29 32h1v1H29zM31 32h1v1H31z"/></svg></div>
+        <div class="qr-cap">スマホで読み取ると<br>このプロンプトが開きます<br>（コピーはワンタップ）</div>
+      </div>
+      </div>
+      <div class="content-body mt-md" style="font-size:var(--text-xs);">
+        ポイント：診断→反応→深掘りの往復で使うプロンプトです。「その改善案でリライトして」「別の切り口も」と返しながら、自分の言葉に寄せていってください。
       </div>
     </div>
   </section>
@@ -759,7 +823,7 @@ button,a{-webkit-tap-highlight-color:transparent}
       </div>
       <div class="qr-take" style="max-width:820px;margin-left:auto;margin-right:auto;">
         <div class="qr-box"><svg width="120" height="120" viewBox="0 0 33 33" shape-rendering="crispEdges" role="img" aria-label="スライド共有URLのQRコード"><path fill="#000" d="M0 0h7v1H0zM9 0h2v1H9zM12 0h2v1H12zM17 0h1v1H17zM19 0h2v1H19zM22 0h3v1H22zM26 0h7v1H26zM0 1h1v1H0zM6 1h1v1H6zM11 1h5v1H11zM17 1h1v1H17zM20 1h2v1H20zM26 1h1v1H26zM32 1h1v1H32zM0 2h1v1H0zM2 2h3v1H2zM6 2h1v1H6zM8 2h1v1H8zM10 2h2v1H10zM13 2h1v1H13zM17 2h5v1H17zM23 2h2v1H23zM26 2h1v1H26zM28 2h3v1H28zM32 2h1v1H32zM0 3h1v1H0zM2 3h3v1H2zM6 3h1v1H6zM8 3h1v1H8zM10 3h1v1H10zM14 3h3v1H14zM19 3h2v1H19zM23 3h1v1H23zM26 3h1v1H26zM28 3h3v1H28zM32 3h1v1H32zM0 4h1v1H0zM2 4h3v1H2zM6 4h1v1H6zM8 4h3v1H8zM13 4h1v1H13zM15 4h1v1H15zM18 4h1v1H18zM21 4h4v1H21zM26 4h1v1H26zM28 4h3v1H28zM32 4h1v1H32zM0 5h1v1H0zM6 5h1v1H6zM8 5h1v1H8zM10 5h2v1H10zM13 5h4v1H13zM18 5h1v1H18zM20 5h2v1H20zM24 5h1v1H24zM26 5h1v1H26zM32 5h1v1H32zM0 6h7v1H0zM8 6h1v1H8zM10 6h1v1H10zM12 6h1v1H12zM14 6h1v1H14zM16 6h1v1H16zM18 6h1v1H18zM20 6h1v1H20zM22 6h1v1H22zM24 6h1v1H24zM26 6h7v1H26zM8 7h1v1H8zM10 7h2v1H10zM15 7h1v1H15zM18 7h1v1H18zM21 7h1v1H21zM0 8h1v1H0zM2 8h5v1H2zM11 8h5v1H11zM17 8h2v1H17zM24 8h1v1H24zM26 8h5v1H26zM0 9h1v1H0zM4 9h2v1H4zM7 9h1v1H7zM9 9h4v1H9zM16 9h1v1H16zM18 9h6v1H18zM26 9h2v1H26zM29 9h2v1H29zM32 9h1v1H32zM0 10h1v1H0zM2 10h2v1H2zM6 10h2v1H6zM9 10h1v1H9zM15 10h2v1H15zM18 10h1v1H18zM20 10h1v1H20zM25 10h2v1H25zM28 10h1v1H28zM30 10h2v1H30zM0 11h3v1H0zM5 11h1v1H5zM8 11h5v1H8zM14 11h3v1H14zM19 11h4v1H19zM28 11h5v1H28zM0 12h2v1H0zM3 12h5v1H3zM11 12h1v1H11zM15 12h1v1H15zM18 12h2v1H18zM23 12h3v1H23zM27 12h3v1H27zM31 12h2v1H31zM1 13h5v1H1zM7 13h2v1H7zM10 13h3v1H10zM14 13h4v1H14zM20 13h4v1H20zM26 13h1v1H26zM31 13h2v1H31zM0 14h2v1H0zM6 14h1v1H6zM8 14h1v1H8zM11 14h1v1H11zM13 14h1v1H13zM17 14h1v1H17zM19 14h1v1H19zM24 14h3v1H24zM30 14h2v1H30zM1 15h3v1H1zM5 15h1v1H5zM7 15h1v1H7zM10 15h5v1H10zM16 15h1v1H16zM18 15h5v1H18zM25 15h3v1H25zM29 15h2v1H29zM0 16h7v1H0zM9 16h1v1H9zM12 16h1v1H12zM14 16h1v1H14zM16 16h2v1H16zM19 16h1v1H19zM24 16h2v1H24zM27 16h2v1H27zM32 16h1v1H32zM2 17h1v1H2zM4 17h2v1H4zM8 17h1v1H8zM11 17h1v1H11zM16 17h8v1H16zM26 17h2v1H26zM29 17h2v1H29zM32 17h1v1H32zM3 18h2v1H3zM6 18h2v1H6zM10 18h2v1H10zM13 18h3v1H13zM17 18h1v1H17zM21 18h2v1H21zM26 18h3v1H26zM30 18h1v1H30zM0 19h4v1H0zM8 19h1v1H8zM11 19h1v1H11zM15 19h1v1H15zM17 19h3v1H17zM21 19h3v1H21zM25 19h8v1H25zM0 20h7v1H0zM10 20h5v1H10zM16 20h1v1H16zM22 20h2v1H22zM27 20h3v1H27zM31 20h2v1H31zM0 21h4v1H0zM10 21h2v1H10zM13 21h3v1H13zM18 21h1v1H18zM21 21h1v1H21zM23 21h2v1H23zM26 21h1v1H26zM32 21h1v1H32zM0 22h1v1H0zM2 22h2v1H2zM5 22h5v1H5zM14 22h4v1H14zM20 22h1v1H20zM25 22h1v1H25zM27 22h1v1H27zM29 22h1v1H29zM31 22h1v1H31zM0 23h1v1H0zM4 23h2v1H4zM11 23h2v1H11zM15 23h1v1H15zM19 23h3v1H19zM23 23h1v1H23zM26 23h1v1H26zM30 23h1v1H30zM32 23h1v1H32zM0 24h1v1H0zM6 24h2v1H6zM10 24h1v1H10zM12 24h4v1H12zM17 24h1v1H17zM19 24h1v1H19zM24 24h5v1H24zM8 25h2v1H8zM11 25h1v1H11zM16 25h1v1H16zM18 25h5v1H18zM24 25h1v1H24zM28 25h1v1H28zM30 25h1v1H30zM32 25h1v1H32zM0 26h7v1H0zM9 26h2v1H9zM13 26h3v1H13zM18 26h1v1H18zM20 26h1v1H20zM23 26h2v1H23zM26 26h1v1H26zM28 26h1v1H28zM30 26h2v1H30zM0 27h1v1H0zM6 27h1v1H6zM8 27h1v1H8zM10 27h1v1H10zM15 27h2v1H15zM20 27h5v1H20zM28 27h4v1H28zM0 28h1v1H0zM2 28h3v1H2zM6 28h1v1H6zM8 28h4v1H8zM15 28h1v1H15zM18 28h2v1H18zM24 28h6v1H24zM32 28h1v1H32zM0 29h1v1H0zM2 29h3v1H2zM6 29h1v1H6zM8 29h1v1H8zM10 29h1v1H10zM12 29h2v1H12zM15 29h3v1H15zM19 29h1v1H19zM21 29h2v1H21zM25 29h1v1H25zM28 29h2v1H28zM31 29h2v1H31zM0 30h1v1H0zM2 30h3v1H2zM6 30h1v1H6zM8 30h2v1H8zM11 30h4v1H11zM18 30h1v1H18zM20 30h1v1H20zM22 30h1v1H22zM24 30h4v1H24zM29 30h2v1H29zM0 31h1v1H0zM6 31h1v1H6zM9 31h3v1H9zM13 31h2v1H13zM16 31h1v1H16zM21 31h1v1H21zM23 31h1v1H23zM25 31h2v1H25zM28 31h3v1H28zM0 32h7v1H0zM8 32h2v1H8zM11 32h1v1H11zM13 32h2v1H13zM16 32h2v1H16zM19 32h1v1H19zM24 32h2v1H24zM27 32h1v1H27zM29 32h1v1H29zM31 32h1v1H31z"/></svg></div>
-        <div class="qr-note">今日のスライドとワークのプロンプト全文は、このQRからいつでも開けます。<br>ワーク②（SNSアカウント診断）が時間切れになった方は、自宅で10分。ぜひやってみてください。<div class="qr-url">https://fromk0326-boop.github.io/hk-talk-74d835c9/</div></div>
+        <div class="qr-note">今日のスライドとワークのプロンプト全文は、このQRからいつでも開けます。<br>ワーク②（アカウント診断）・ワーク③（リーチ壁打ち）が時間切れになった方は、自宅で10分。ぜひやってみてください。<div class="qr-url">https://fromk0326-boop.github.io/hk-talk-74d835c9/</div></div>
       </div>
     </div>
   </section>
