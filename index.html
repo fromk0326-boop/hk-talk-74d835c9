@@ -236,6 +236,87 @@
 </head>
 <body>
 
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+  <!-- キラキラ星（フチ付き・LP調） -->
+  <path id="spk" d="M0 -11 C1.8 -3.5 3.5 -1.8 11 0 C3.5 1.8 1.8 3.5 0 11 C-1.8 3.5 -3.5 1.8 -11 0 C-3.5 -1.8 -1.8 -3.5 0 -11 Z"/>
+  <!-- 笑顔の顔（肌・目・眉・頬・口） 原点=顔中心 -->
+  <g id="face-happy">
+    <path d="M-36 -2 Q-38 22 -24 34 Q-12 43 0 43 Q12 43 24 34 Q38 22 36 -2 Q36 -30 0 -32 Q-36 -30 -36 -2 Z" fill="#ffdfc2"/>
+    <ellipse cx="-24" cy="16" rx="6" ry="3.6" fill="#ffb3a0" opacity=".55"/>
+    <ellipse cx="24" cy="16" rx="6" ry="3.6" fill="#ffb3a0" opacity=".55"/>
+    <ellipse cx="-14" cy="4" rx="7.2" ry="8.4" fill="#ffffff"/>
+    <ellipse cx="14" cy="4" rx="7.2" ry="8.4" fill="#ffffff"/>
+    <circle cx="-13" cy="5" r="5.4" fill="#503722"/>
+    <circle cx="15" cy="5" r="5.4" fill="#503722"/>
+    <circle cx="-15" cy="2.6" r="2" fill="#ffffff"/>
+    <circle cx="13" cy="2.6" r="2" fill="#ffffff"/>
+    <path d="M-21 -7 Q-14 -11 -8 -8" stroke="#6f4f30" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+    <path d="M8 -8 Q14 -11 21 -7" stroke="#6f4f30" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+    <path d="M-9 24 Q0 35 9 24 Q0 28.5 -9 24 Z" fill="#8c4a3c"/>
+    <path d="M-6.4 24.6 Q0 27.8 6.4 24.6 Q0 26.2 -6.4 24.6 Z" fill="#ffffff"/>
+  </g>
+  <!-- 困り顔 -->
+  <g id="face-worried">
+    <path d="M-36 -2 Q-38 22 -24 34 Q-12 43 0 43 Q12 43 24 34 Q38 22 36 -2 Q36 -30 0 -32 Q-36 -30 -36 -2 Z" fill="#ffdfc2"/>
+    <ellipse cx="-14" cy="5" rx="6.6" ry="7.6" fill="#ffffff"/>
+    <ellipse cx="14" cy="5" rx="6.6" ry="7.6" fill="#ffffff"/>
+    <circle cx="-13" cy="6" r="4.8" fill="#503722"/>
+    <circle cx="15" cy="6" r="4.8" fill="#503722"/>
+    <circle cx="-14.6" cy="4" r="1.7" fill="#ffffff"/>
+    <circle cx="13.4" cy="4" r="1.7" fill="#ffffff"/>
+    <path d="M-21 -6 Q-14 -10 -8 -6" stroke="#6f4f30" stroke-width="2.6" fill="none" stroke-linecap="round" transform="rotate(9 -14 -8)"/>
+    <path d="M8 -6 Q14 -10 21 -6" stroke="#6f4f30" stroke-width="2.6" fill="none" stroke-linecap="round" transform="rotate(-9 14 -8)"/>
+    <path d="M-8 28 Q0 22 8 28" stroke="#8c4a3c" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+    <path d="M33 12 q4 7 0 10 q-5 -3 0 -10" fill="#9fd0f0"/>
+  </g>
+  <!-- ふわ茶髪（けんと風） -->
+  <g id="hair-kento">
+    <path d="M-38 4 C-44 -26 -30 -50 0 -51 C30 -50 44 -26 38 4
+             C36 -4 34 -9 30 -12 C31 -7 30 -4 27 -2 C24 -12 19 -17 13 -19
+             C15 -13 14 -10 12 -8 C5 -17 -3 -19 -9 -18 C-7 -14 -8 -11 -10 -9
+             C-16 -16 -24 -16 -28 -12 C-27 -8 -28 -5 -30 -2 C-33 -6 -36 -2 -38 4 Z" fill="#8a6544"/>
+    <path d="M-28 -28 Q-16 -38 0 -39 Q16 -38 28 -28" stroke="#6d4c30" stroke-width="2.2" fill="none" opacity=".5" stroke-linecap="round"/>
+    <path d="M-39 0 Q-42 12 -38 20 Q-35 10 -37 2 Z" fill="#8a6544"/>
+    <path d="M39 0 Q42 12 38 20 Q35 10 37 2 Z" fill="#8a6544"/>
+  </g>
+  <!-- 黒髪短髪 -->
+  <g id="hair-black">
+    <path d="M-37 2 C-41 -26 -26 -48 0 -49 C26 -48 41 -26 37 2
+             C34 -6 31 -11 27 -13 C27 -6 25 -2 22 0 C17 -12 9 -17 1 -17
+             C-9 -17 -19 -12 -25 -5 C-27 -2 -29 0 -31 2 C-33 -2 -35 -2 -37 2 Z" fill="#3d3d42"/>
+  </g>
+  <!-- ロングヘア（女性） -->
+  <g id="hair-long">
+    <path d="M-36 -8 C-40 -32 -24 -48 0 -49 C24 -48 40 -32 36 -8
+             C34 -12 32 -15 28 -17 C29 -11 28 -7 25 -4 C20 -14 12 -18 4 -18
+             C-6 -18 -16 -14 -22 -7 C-24 -4 -27 -2 -30 0 C-33 -4 -34 -6 -36 -8 Z" fill="#5b4632"/>
+    <path d="M-36 -10 Q-45 18 -41 46 Q-34 49 -27 46 Q-31 18 -30 -2 Z" fill="#5b4632"/>
+    <path d="M36 -10 Q45 18 41 46 Q34 49 27 46 Q31 18 30 -2 Z" fill="#5b4632"/>
+  </g>
+  <!-- AIロボット（片手を上げて挨拶） 原点=頭中心 -->
+  <g id="robot">
+    <path d="M-46 34 q-14 -2 -18 -14" stroke="#dfe7f2" stroke-width="11" fill="none" stroke-linecap="round"/>
+    <circle cx="-65" cy="18" r="8" fill="#ffffff" stroke="#c9d4e4" stroke-width="2"/>
+    <path d="M44 40 q14 6 16 18" stroke="#dfe7f2" stroke-width="11" fill="none" stroke-linecap="round"/>
+    <circle cx="62" cy="60" r="8" fill="#ffffff" stroke="#c9d4e4" stroke-width="2"/>
+    <rect x="-40" y="-36" width="80" height="62" rx="28" fill="#ffffff" stroke="#c9d4e4" stroke-width="2.5"/>
+    <ellipse cx="-16" cy="-26" rx="12" ry="6" fill="#ffffff" opacity=".9"/>
+    <rect x="-29" y="-27" width="58" height="44" rx="20" fill="#16233f"/>
+    <path d="M-19 -6 q6 -10 12 0" stroke="#8fd9ff" stroke-width="4.2" fill="none" stroke-linecap="round"/>
+    <path d="M7 -6 q6 -10 12 0" stroke="#8fd9ff" stroke-width="4.2" fill="none" stroke-linecap="round"/>
+    <path d="M-8 3 q8 11 16 0 q-8 4 -16 0 Z" fill="#35a3e8"/>
+    <line x1="0" y1="-36" x2="0" y2="-46" stroke="#c9d4e4" stroke-width="3"/>
+    <circle cx="0" cy="-50" r="4.5" fill="#7fd4ff" stroke="#2d6fd6" stroke-width="1.5"/>
+    <rect x="-13" y="26" width="26" height="8" rx="4" fill="#dfe7f2"/>
+    <path d="M-30 34 Q0 28 30 34 L34 86 Q0 94 -34 86 Z" fill="#ffffff" stroke="#c9d4e4" stroke-width="2.5"/>
+    <rect x="-16" y="46" width="32" height="22" rx="8" fill="#eaf4fc" stroke="#2d6fd6" stroke-width="2"/>
+    <text x="0" y="62" text-anchor="middle" font-size="14" font-weight="800" fill="#2d6fd6" font-family="sans-serif">AI</text>
+  </g>
+</defs>
+</svg>
+
 <!-- 進捗バー -->
 <div class="progress-bar">
   <div class="logo">夢中で取り組める<span>領域</span>の見つけ方</div>
@@ -253,59 +334,52 @@
 
     <!-- ヒーローイラスト：発掘する人とAIロボット -->
     <div class="hero-illust">
-      <svg viewBox="0 0 560 240" role="img" aria-label="自分の中に眠る原石を、AIと一緒に掘り出すイラスト">
-        <!-- 地面 -->
-        <ellipse cx="280" cy="215" rx="250" ry="22" fill="#f3ecd8"/>
-        <!-- キラキラ -->
-        <g fill="#fcd24d">
-          <path d="M60 40l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/>
-          <path d="M500 30l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
-          <path d="M460 120l2.5 6 6 2.5-6 2.5-2.5 6-2.5-6-6-2.5 6-2.5z"/>
-          <path d="M90 140l2.5 6 6 2.5-6 2.5-2.5 6-2.5-6-6-2.5 6-2.5z"/>
+      <svg viewBox="0 0 560 260" role="img" aria-label="自分の中に眠る原石を、AIと一緒に掘り出すイラスト">
+        <ellipse cx="280" cy="232" rx="252" ry="20" fill="#f3ecd8"/>
+        <g fill="#f5c332" stroke="#e8a81a" stroke-width="1.4">
+          <use href="#spk" transform="translate(58 46) scale(1.15)"/>
+          <use href="#spk" transform="translate(505 36) scale(0.9)"/>
+          <use href="#spk" transform="translate(468 130) scale(0.6)"/>
+          <use href="#spk" transform="translate(92 150) scale(0.6)"/>
         </g>
-        <!-- 原石（中央） -->
+        <g fill="#9fc8f2" stroke="#5f9ede" stroke-width="1.2">
+          <use href="#spk" transform="translate(150 30) scale(0.5)"/>
+          <use href="#spk" transform="translate(415 178) scale(0.5)"/>
+        </g>
+        <!-- 原石 -->
         <g>
-          <path d="M280 120 L318 150 L303 196 L257 196 L242 150 Z" fill="#8b5cf6" stroke="#6d3fd8" stroke-width="3" stroke-linejoin="round"/>
-          <path d="M280 120 L280 196 M280 120 L242 150 M280 120 L318 150" stroke="#c9b3f7" stroke-width="2.5" fill="none"/>
-          <path d="M262 148 l6 -8 4 6 z" fill="#ffffff" opacity=".85"/>
+          <path d="M280 128 L318 158 L303 204 L257 204 L242 158 Z" fill="#a678f2" stroke="#7b4fd8" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M280 128 L280 204 M280 128 L242 158 M280 128 L318 158" stroke="#d3bcf9" stroke-width="2.5" fill="none"/>
+          <path d="M280 128 L257 204 M280 128 L303 204" stroke="#c4a8f7" stroke-width="1.6" fill="none"/>
+          <path d="M262 156 l7 -9 5 7 z" fill="#ffffff" opacity=".9"/>
         </g>
-        <g stroke="#f08a3c" stroke-width="3" stroke-linecap="round">
-          <path d="M280 100 v-14"/><path d="M254 108 l-9 -11"/><path d="M306 108 l9 -11"/>
+        <g stroke="#f0a53c" stroke-width="3.4" stroke-linecap="round">
+          <path d="M280 108 v-15"/><path d="M253 116 l-10 -12"/><path d="M307 116 l10 -12"/>
         </g>
-        <!-- 人（左）：スーツの会計士 -->
-        <g>
-          <circle cx="150" cy="120" r="26" fill="#ffe3c9"/>
-          <path d="M124 116 q6 -24 26 -24 q20 0 26 24 q-6 -10 -26 -10 q-20 0 -26 10z" fill="#5a4632"/>
-          <circle cx="141" cy="122" r="3" fill="#2a2a2a"/>
-          <circle cx="159" cy="122" r="3" fill="#2a2a2a"/>
-          <path d="M144 133 q6 5 12 0" stroke="#2a2a2a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-          <path d="M126 150 q24 -12 48 0 l6 46 h-60 z" fill="#2d4a75"/>
-          <path d="M147 150 h6 l-3 20 z" fill="#ffffff"/>
-          <!-- 腕＋ピッケル -->
-          <path d="M170 160 q22 -6 34 -22" stroke="#2d4a75" stroke-width="11" fill="none" stroke-linecap="round"/>
-          <g transform="rotate(-30 210 128)">
-            <rect x="206" y="112" width="7" height="44" rx="3" fill="#a9723d"/>
-            <path d="M188 114 q22 -14 44 0 q-22 -4 -44 0z" fill="#8d9aa8"/>
+        <!-- けんと（ピッケル） -->
+        <g transform="translate(150 132)">
+          <path d="M-42 100 Q-44 62 -30 50 Q-16 44 0 44 Q16 44 30 50 Q44 62 42 100 Z" fill="#2e4a78"/>
+          <path d="M-13 48 Q0 44 13 48 L7 76 L0 94 L-7 76 Z" fill="#ffffff"/>
+          <path d="M-13 48 L-9 78 M13 48 L9 78" stroke="#24395d" stroke-width="2" fill="none"/>
+          <rect x="-7" y="34" width="14" height="12" rx="5" fill="#f7cfa8"/>
+          <path d="M30 56 Q52 42 62 22" stroke="#2e4a78" stroke-width="13" fill="none" stroke-linecap="round"/>
+          <circle cx="64" cy="18" r="7" fill="#f7cfa8"/>
+          <g transform="rotate(-34 64 18)">
+            <rect x="60" y="-26" width="7" height="48" rx="3.5" fill="#b07c46"/>
+            <path d="M42 -22 Q64 -38 86 -22 Q64 -28 42 -22 Z" fill="#93a2b5" stroke="#7a8a9e" stroke-width="1.5"/>
           </g>
+          <use href="#face-happy"/>
+          <use href="#hair-kento"/>
         </g>
-        <!-- AIロボット（右） -->
-        <g>
-          <rect x="374" y="128" width="58" height="52" rx="16" fill="#eaf4fc" stroke="#2d6fd6" stroke-width="3"/>
-          <rect x="384" y="96" width="38" height="34" rx="12" fill="#ffffff" stroke="#2d6fd6" stroke-width="3"/>
-          <circle cx="395" cy="112" r="4" fill="#2d6fd6"/>
-          <circle cx="411" cy="112" r="4" fill="#2d6fd6"/>
-          <path d="M397 121 q6 4 12 0" stroke="#2d6fd6" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-          <line x1="403" y1="96" x2="403" y2="86" stroke="#2d6fd6" stroke-width="3"/>
-          <circle cx="403" cy="83" r="4" fill="#ec4b8e"/>
-          <text x="403" y="162" text-anchor="middle" font-size="15" font-weight="800" fill="#2d6fd6" font-family="sans-serif">AI</text>
-          <!-- 指さし -->
-          <path d="M374 146 q-18 -4 -32 -16" stroke="#2d6fd6" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <!-- ロボット -->
+        <g transform="translate(408 138) scale(0.92)">
+          <use href="#robot"/>
         </g>
         <!-- 吹き出し -->
         <g>
-          <rect x="314" y="34" width="212" height="44" rx="22" fill="#ffffff" stroke="#ec4b8e" stroke-width="2.5"/>
-          <path d="M400 78 l-8 14 20 -14z" fill="#ffffff" stroke="#ec4b8e" stroke-width="2.5" stroke-linejoin="round"/>
-          <text x="420" y="61" text-anchor="middle" font-size="16" font-weight="800" fill="#ec4b8e" font-family="sans-serif">原石、ここにあります！</text>
+          <rect x="316" y="20" width="212" height="44" rx="22" fill="#ffffff" stroke="#ec4b8e" stroke-width="2.5"/>
+          <path d="M398 64 l-8 15 22 -15z" fill="#ffffff" stroke="#ec4b8e" stroke-width="2.5" stroke-linejoin="round"/>
+          <text x="422" y="48" text-anchor="middle" font-size="16" font-weight="800" fill="#ec4b8e" font-family="sans-serif">原石、ここにあります！</text>
         </g>
       </svg>
     </div>
@@ -416,43 +490,51 @@
 
     <!-- Before/After イラスト -->
     <figure class="illust">
-      <svg viewBox="0 0 560 180" role="img" aria-label="強みがないと悩む状態から、原石に気づく状態への変化">
+      <svg viewBox="0 0 560 200" role="img" aria-label="強みがないと悩む状態から、原石に気づく状態への変化">
         <!-- Before -->
+        <rect x="8" y="12" width="252" height="176" rx="18" fill="#eef0f4" stroke="#c9cdd6" stroke-width="2.5"/>
+        <rect x="24" y="26" width="104" height="28" rx="14" fill="#8a97ad"/>
+        <text x="76" y="46" text-anchor="middle" font-size="15" font-weight="800" fill="#fff" font-family="sans-serif">Before</text>
+        <g transform="translate(90 116) scale(0.78)">
+          <path d="M-40 96 Q-42 60 -28 48 Q-14 42 0 42 Q14 42 28 48 Q42 60 40 96 Z" fill="#8a97ad"/>
+          <path d="M-12 46 Q0 42 12 46 L6 72 L0 88 L-6 72 Z" fill="#ffffff"/>
+          <rect x="-7" y="33" width="14" height="12" rx="5" fill="#f7cfa8"/>
+          <use href="#face-worried"/>
+          <use href="#hair-kento"/>
+        </g>
         <g>
-          <rect x="10" y="14" width="240" height="150" rx="16" fill="#f0f0ee" stroke="#c9c9c4" stroke-width="2"/>
-          <rect x="26" y="26" width="110" height="26" rx="13" fill="#8a97ad"/>
-          <text x="81" y="44" text-anchor="middle" font-size="14" font-weight="800" fill="#fff" font-family="sans-serif">Before</text>
-          <circle cx="90" cy="100" r="20" fill="#ffe3c9"/>
-          <path d="M70 97 q5 -19 20 -19 q15 0 20 19 q-5 -8 -20 -8 q-15 0 -20 8z" fill="#5a4632"/>
-          <circle cx="83" cy="102" r="2.5" fill="#2a2a2a"/><circle cx="97" cy="102" r="2.5" fill="#2a2a2a"/>
-          <path d="M84 112 q6 -3 12 0" stroke="#2a2a2a" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <path d="M72 124 q18 -9 36 0 l4 32 h-44 z" fill="#8a97ad"/>
-          <g>
-            <ellipse cx="176" cy="88" rx="52" ry="26" fill="#ffffff" stroke="#8a97ad" stroke-width="2"/>
-            <path d="M136 104 l-10 12 22 -6z" fill="#ffffff" stroke="#8a97ad" stroke-width="2" stroke-linejoin="round"/>
-            <text x="176" y="85" text-anchor="middle" font-size="13" font-weight="800" fill="#5b6b7e" font-family="sans-serif">強みなんて</text>
-            <text x="176" y="101" text-anchor="middle" font-size="13" font-weight="800" fill="#5b6b7e" font-family="sans-serif">ない気がする…</text>
-          </g>
+          <ellipse cx="188" cy="86" rx="58" ry="30" fill="#ffffff" stroke="#8a97ad" stroke-width="2"/>
+          <circle cx="146" cy="122" r="5" fill="#ffffff" stroke="#8a97ad" stroke-width="2"/>
+          <circle cx="134" cy="134" r="3" fill="#ffffff" stroke="#8a97ad" stroke-width="1.6"/>
+          <text x="188" y="82" text-anchor="middle" font-size="13.5" font-weight="800" fill="#5b6b7e" font-family="sans-serif">強みなんて</text>
+          <text x="188" y="99" text-anchor="middle" font-size="13.5" font-weight="800" fill="#5b6b7e" font-family="sans-serif">ない気がする…</text>
         </g>
         <!-- 矢印 -->
-        <path d="M262 90 h30" stroke="#2d6fd6" stroke-width="9" stroke-linecap="round"/>
-        <path d="M288 76 l20 14 -20 14z" fill="#2d6fd6"/>
+        <path d="M268 100 h26" stroke="#2d6fd6" stroke-width="9" stroke-linecap="round"/>
+        <path d="M290 84 l22 16 -22 16z" fill="#2d6fd6"/>
         <!-- After -->
-        <g>
-          <rect x="310" y="14" width="240" height="150" rx="16" fill="#fff6d9" stroke="#fcd24d" stroke-width="2.5"/>
-          <rect x="326" y="26" width="100" height="26" rx="13" fill="#f08a3c"/>
-          <text x="376" y="44" text-anchor="middle" font-size="14" font-weight="800" fill="#fff" font-family="sans-serif">After</text>
-          <g transform="translate(-16 0)"><circle cx="390" cy="100" r="20" fill="#ffe3c9"/>
-          <path d="M370 97 q5 -19 20 -19 q15 0 20 19 q-5 -8 -20 -8 q-15 0 -20 8z" fill="#5a4632"/>
-          <circle cx="383" cy="101" r="2.5" fill="#2a2a2a"/><circle cx="397" cy="101" r="2.5" fill="#2a2a2a"/>
-          <path d="M383 110 q7 6 14 0" stroke="#2a2a2a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-          <path d="M372 124 q18 -9 36 0 l4 32 h-44 z" fill="#2d6fd6"/></g>
-          <path d="M452 96 L472 112 L464 138 L440 138 L432 112 Z" fill="#8b5cf6" stroke="#6d3fd8" stroke-width="2.5" stroke-linejoin="round"/>
-          <path d="M452 96 L452 138 M452 96 L432 112 M452 96 L472 112" stroke="#c9b3f7" stroke-width="1.8" fill="none"/>
-          <g fill="#f08a3c"><path d="M452 84 v-9"/><path d="M436 89 l-6 -8"/><path d="M468 89 l6 -8"/></g>
-          <g stroke="#f08a3c" stroke-width="2.5" stroke-linecap="round"><path d="M452 84 v-9"/><path d="M436 89 l-6 -8"/><path d="M468 89 l6 -8"/></g>
-          <text x="464" y="158" text-anchor="middle" font-size="12.5" font-weight="800" fill="#a86c00" font-family="sans-serif">原石はもう持ってる</text>
+        <rect x="316" y="12" width="236" height="176" rx="18" fill="#fff6d9" stroke="#fcd24d" stroke-width="2.5"/>
+        <rect x="332" y="26" width="94" height="28" rx="14" fill="#f08a3c"/>
+        <text x="379" y="46" text-anchor="middle" font-size="15" font-weight="800" fill="#fff" font-family="sans-serif">After</text>
+        <g transform="translate(392 114) scale(0.74)">
+          <path d="M-40 96 Q-42 60 -28 48 Q-14 42 0 42 Q14 42 28 48 Q42 60 40 96 Z" fill="#2e4a78"/>
+          <path d="M-12 46 Q0 42 12 46 L6 72 L0 88 L-6 72 Z" fill="#ffffff"/>
+          <rect x="-7" y="33" width="14" height="12" rx="5" fill="#f7cfa8"/>
+          <use href="#face-happy"/>
+          <use href="#hair-kento"/>
         </g>
+        <g>
+          <path d="M486 92 L508 110 L499 138 L473 138 L464 110 Z" fill="#a678f2" stroke="#7b4fd8" stroke-width="2.8" stroke-linejoin="round"/>
+          <path d="M486 92 L486 138 M486 92 L464 110 M486 92 L508 110" stroke="#d3bcf9" stroke-width="2" fill="none"/>
+          <g stroke="#f0a53c" stroke-width="2.6" stroke-linecap="round">
+            <path d="M486 80 v-10"/><path d="M468 86 l-7 -9"/><path d="M504 86 l7 -9"/>
+          </g>
+        </g>
+        <g fill="#f5c332" stroke="#e8a81a" stroke-width="1.2">
+          <use href="#spk" transform="translate(340 160) scale(0.55)"/>
+          <use href="#spk" transform="translate(534 60) scale(0.7)"/>
+        </g>
+        <text x="487" y="176" text-anchor="middle" font-size="12.5" font-weight="800" fill="#a86c00" font-family="sans-serif">原石はもう持ってる</text>
       </svg>
     </figure>
 
@@ -556,40 +638,42 @@
 
     <!-- 意見交換イラスト -->
     <figure class="illust">
-      <svg viewBox="0 0 520 150" role="img" aria-label="3人で棚卸し結果を見せ合い、それすごいですよと伝え合う図">
-        <g>
-          <circle cx="110" cy="86" r="20" fill="#ffe3c9"/>
-          <path d="M90 83 q5 -19 20 -19 q15 0 20 19 q-5 -8 -20 -8 q-15 0 -20 8z" fill="#5a4632"/>
-          <circle cx="103" cy="88" r="2.5" fill="#2a2a2a"/><circle cx="117" cy="88" r="2.5" fill="#2a2a2a"/>
-          <path d="M104 96 q6 4 12 0" stroke="#2a2a2a" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <path d="M92 110 q18 -9 36 0 l4 30 h-44 z" fill="#2d6fd6"/>
+      <svg viewBox="0 0 560 190" role="img" aria-label="3人で棚卸し結果を見せ合い、それすごいですよと伝え合う図">
+        <g transform="translate(110 108) scale(0.8)">
+          <path d="M-40 96 Q-42 60 -28 48 Q-14 42 0 42 Q14 42 28 48 Q42 60 40 96 Z" fill="#2e4a78"/>
+          <path d="M-12 46 Q0 42 12 46 L6 72 L0 88 L-6 72 Z" fill="#ffffff"/>
+          <rect x="-7" y="33" width="14" height="12" rx="5" fill="#f7cfa8"/>
+          <use href="#face-happy"/>
+          <use href="#hair-kento"/>
+        </g>
+        <g transform="translate(272 108) scale(0.8)">
+          <path d="M-40 96 Q-42 60 -28 48 Q-14 42 0 42 Q14 42 28 48 Q42 60 40 96 Z" fill="#57a93f"/>
+          <rect x="-7" y="33" width="14" height="12" rx="5" fill="#f7cfa8"/>
+          <rect x="-30" y="58" width="60" height="40" rx="5" fill="#ffffff" stroke="#8a97ad" stroke-width="2.4"/>
+          <line x1="-22" y1="68" x2="22" y2="68" stroke="#c9cdd6" stroke-width="2.4"/>
+          <line x1="-22" y1="77" x2="22" y2="77" stroke="#c9cdd6" stroke-width="2.4"/>
+          <line x1="-22" y1="86" x2="10" y2="86" stroke="#c9cdd6" stroke-width="2.4"/>
+          <use href="#face-happy"/>
+          <use href="#hair-black"/>
+        </g>
+        <g transform="translate(436 108) scale(0.8)">
+          <path d="M-40 96 Q-42 60 -28 48 Q-14 42 0 42 Q14 42 28 48 Q42 60 40 96 Z" fill="#f08a3c"/>
+          <path d="M-12 46 Q0 42 12 46 L0 66 Z" fill="#ffffff"/>
+          <rect x="-7" y="33" width="14" height="12" rx="5" fill="#f7cfa8"/>
+          <use href="#face-happy"/>
+          <use href="#hair-long"/>
         </g>
         <g>
-          <circle cx="260" cy="86" r="20" fill="#ffe3c9"/>
-          <path d="M240 84 q4 -20 20 -20 q16 0 20 20 q-6 -9 -20 -9 q-14 0 -20 9z" fill="#7a5a3a"/>
-          <circle cx="253" cy="88" r="2.5" fill="#2a2a2a"/><circle cx="267" cy="88" r="2.5" fill="#2a2a2a"/>
-          <path d="M254 96 q6 4 12 0" stroke="#2a2a2a" stroke-width="2" fill="none" stroke-linecap="round"/>
-          <path d="M242 110 q18 -9 36 0 l4 30 h-44 z" fill="#57a93f"/>
-          <rect x="236" y="118" width="48" height="30" rx="4" fill="#ffffff" stroke="#8a97ad" stroke-width="2"/>
-          <line x1="242" y1="126" x2="278" y2="126" stroke="#c9c9c4" stroke-width="2"/>
-          <line x1="242" y1="133" x2="278" y2="133" stroke="#c9c9c4" stroke-width="2"/>
-          <line x1="242" y1="140" x2="266" y2="140" stroke="#c9c9c4" stroke-width="2"/>
+          <rect x="330" y="8" width="212" height="42" rx="21" fill="#ffffff" stroke="#57a93f" stroke-width="2.5"/>
+          <path d="M424 50 l-7 13 19 -13z" fill="#ffffff" stroke="#57a93f" stroke-width="2.5" stroke-linejoin="round"/>
+          <text x="436" y="35" text-anchor="middle" font-size="14.5" font-weight="800" fill="#57a93f" font-family="sans-serif">それ、普通にすごいですよ</text>
         </g>
-        <g>
-          <circle cx="410" cy="86" r="20" fill="#ffe3c9"/>
-          <path d="M390 83 q5 -19 20 -19 q15 0 20 19 q-5 -8 -20 -8 q-15 0 -20 8z" fill="#3a3a3a"/>
-          <circle cx="403" cy="88" r="2.5" fill="#2a2a2a"/><circle cx="417" cy="88" r="2.5" fill="#2a2a2a"/>
-          <path d="M403 95 q7 6 14 0" stroke="#2a2a2a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-          <path d="M392 110 q18 -9 36 0 l4 30 h-44 z" fill="#f08a3c"/>
+        <g fill="#f5c332" stroke="#e8a81a" stroke-width="1.3">
+          <use href="#spk" transform="translate(42 36) scale(0.8)"/>
+          <use href="#spk" transform="translate(196 24) scale(0.55)"/>
         </g>
-        <g>
-          <rect x="308" y="14" width="206" height="40" rx="20" fill="#ffffff" stroke="#57a93f" stroke-width="2.5"/>
-          <path d="M398 54 l-6 12 18 -12z" fill="#ffffff" stroke="#57a93f" stroke-width="2.5" stroke-linejoin="round"/>
-          <text x="411" y="40" text-anchor="middle" font-size="14.5" font-weight="800" fill="#57a93f" font-family="sans-serif">それ、普通にすごいですよ</text>
-        </g>
-        <g fill="#fcd24d">
-          <path d="M40 30l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
-          <path d="M196 22l2.5 6 6 2.5-6 2.5-2.5 6-2.5-6-6-2.5 6-2.5z"/>
+        <g fill="#9fc8f2" stroke="#5f9ede" stroke-width="1.1">
+          <use href="#spk" transform="translate(520 130) scale(0.5)"/>
         </g>
       </svg>
     </figure>
@@ -639,23 +723,29 @@
   </section>
 
   <!-- ===== ＋α 2コース ===== -->
-  <div class="ribbon yellow"><span>＋α｜時間があれば。SNS発信の壁打ち（2コース）</span></div>
-  <p class="sec-lead">当日できなくても大丈夫。自宅で10分、このページからそのままできます。</p>
+  <div class="ribbon yellow"><span>＋α｜時間があれば。発信をさらに磨くワーク</span></div>
+  <p class="sec-lead">当日できなくても大丈夫。自宅で10分ずつ、このページからそのままできます。</p>
 
   <section class="step b-orange" id="plus">
     <!-- 分岐イラスト -->
     <figure class="illust">
-      <svg viewBox="0 0 520 150" role="img" aria-label="発信の現在地で2つのコースに分かれる図">
-        <path d="M250 130 q10 -40 -60 -66 q-40 -16 -70 -18" stroke="#2d6fd6" stroke-width="10" fill="none" stroke-linecap="round"/>
-        <path d="M270 130 q-10 -40 60 -66 q40 -16 70 -18" stroke="#ec4b8e" stroke-width="10" fill="none" stroke-linecap="round"/>
-        <circle cx="260" cy="132" r="13" fill="#fcd24d" stroke="#f08a3c" stroke-width="3"/>
+      <svg viewBox="0 0 520 200" role="img" aria-label="発信の現在地で2つのコースに分かれる図">
+        <path d="M250 128 q10 -40 -60 -66 q-40 -16 -70 -18" stroke="#2d6fd6" stroke-width="10" fill="none" stroke-linecap="round"/>
+        <path d="M270 128 q-10 -40 60 -66 q40 -16 70 -18" stroke="#ec4b8e" stroke-width="10" fill="none" stroke-linecap="round"/>
         <rect x="30" y="18" width="180" height="46" rx="14" fill="#eaf4fc" stroke="#2d6fd6" stroke-width="2.5"/>
         <text x="120" y="38" text-anchor="middle" font-size="14" font-weight="800" fill="#2d6fd6" font-family="sans-serif">ワーク② アカウント診断</text>
         <text x="120" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="#5b6b7e" font-family="sans-serif">これから始める人</text>
         <rect x="310" y="18" width="180" height="46" rx="14" fill="#fdeef5" stroke="#ec4b8e" stroke-width="2.5"/>
         <text x="400" y="38" text-anchor="middle" font-size="14" font-weight="800" fill="#ec4b8e" font-family="sans-serif">ワーク③ リーチ壁打ち</text>
         <text x="400" y="55" text-anchor="middle" font-size="12" font-weight="700" fill="#5b6b7e" font-family="sans-serif">すでに発信している人</text>
-        <text x="234" y="140" text-anchor="end" font-size="12.5" font-weight="800" fill="#a86c00" font-family="sans-serif">現在地 →</text>
+        <g transform="translate(260 150) scale(0.42)">
+          <use href="#robot"/>
+        </g>
+        <text x="212" y="170" text-anchor="end" font-size="13" font-weight="800" fill="#a86c00" font-family="sans-serif">現在地 →</text>
+        <g fill="#f5c332" stroke="#e8a81a" stroke-width="1.2">
+          <use href="#spk" transform="translate(490 120) scale(0.6)"/>
+          <use href="#spk" transform="translate(36 110) scale(0.6)"/>
+        </g>
       </svg>
     </figure>
 
@@ -743,6 +833,67 @@
         <p style="font-size:14px">ポイント：診断→反応→深掘りの往復で使うプロンプトです。「その改善案でリライトして」「別の切り口も」と返しながら、自分の言葉に寄せていってください。</p>
       </div>
     </details>
+  </section>
+
+  <section class="step b-purple" id="w4">
+    <div class="step-head">
+      <div class="step-num" style="background:var(--purple)">4</div>
+      <div class="step-title">
+        <h2>同業リサーチ：先行アカウントの型を学ぶ 🔍</h2>
+        <div class="step-meta">
+          <span class="tag time">⏱ 10分</span>
+          <span class="tag type">🎯 テーマが決まった人の次の一歩</span>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:14.5px">発信の軸が決まったら、<b>同じテーマですでに発信している先行アカウント</b>をXでリサーチして、伸びている投稿の「型」を学びます。目的は真似ではなく、<b style="color:var(--purple)">型を学んで、自分の経験で埋めること</b>。そして先行アカウントがまだやっていない「空いている切り口」を見つければ、第一想起への最短ルートが見えます。</p>
+
+    <div class="box point">
+      <div class="box-h">📋 手順（Xでの検索は自分でやります）</div>
+      <ol style="margin:6px 0;padding-left:22px">
+        <li style="margin:4px 0">Xで自分のテーマのキーワードを検索（例：「スタートアップ 税務」「クリニック 経営」「相続 わかりやすく」）</li>
+        <li style="margin:4px 0">気になった先行アカウントを2〜3個選ぶ</li>
+        <li style="margin:4px 0">各アカウントの<b>プロフィール文</b>と、<b>伸びている投稿（いいね・リポストが多いもの）2〜3本</b>をコピー</li>
+        <li style="margin:4px 0">下のプロンプトに貼り付けてAIに送る</li>
+      </ol>
+    </div>
+
+    <div class="copy">
+      <div class="copy-label">📋 ワーク④ 同業リサーチ分析プロンプト（コピーしてそのまま使えます）</div>
+      <pre id="pt-w4">あなたはSNS発信戦略のアナリストです。
+私は公認会計士で、次の軸で発信を始めよう（強化しよう）としています。
+
+発信の軸：（ここに圧縮版ワークで作った軸1行を貼り付け）
+
+同じテーマで発信している先行アカウントをXで探したので、
+その内容を分析して、私のポジションの取り方を一緒に考えてください。
+
+# 貼り付けるもの
+先行アカウント2〜3個分の
+- プロフィール文
+- 伸びている投稿（いいね・リポストが多いもの）2〜3本ずつ
+
+（ここに貼り付け）
+
+# お願いすること
+- 各アカウントの「発信の軸」（誰に・何を）を1行ずつ言語化する
+- 伸びている投稿に共通する型を抽出する
+  （テーマ・書き出しの1行目・形式・長さ・投稿時間帯）
+- 先行アカウントがまだやっていない「空いている切り口」を3つ挙げる
+- 私の軸と組み合わせた差別化ポジションを
+  「◯◯といえばこの人」の一言で3案提案する
+
+# 注意
+- 目的は真似ではなく、型を学んで自分の経験で埋めることです
+- 複数アカウントを貼ったら、1アカウントずつ順に分析してください</pre>
+      <button class="copy-btn" data-target="pt-w4">コピー</button>
+    </div>
+
+    <div class="box tip">
+      <div class="box-h">🔑 ポイント</div>
+      「同じテーマの人がもういる」はやめる理由ではなく、<b>市場がある証拠</b>です。見るのは「何を書いているか」より「誰に向けてどう書いているか」。空いている切り口 × 自分だけの経験（ワーク①の原石）の組み合わせが、あなたのポジションになります。
+    </div>
   </section>
 
   <!-- ===== 発信の5原則 ===== -->
