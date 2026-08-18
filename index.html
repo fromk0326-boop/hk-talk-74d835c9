@@ -244,7 +244,7 @@
 <div class="progress-bar">
   <div class="logo">夢中で取り組める<span>領域</span>の見つけ方</div>
   <div class="progress-track"><div class="progress-fill" id="fill"></div></div>
-  <div class="progress-count"><b id="cnt">0</b>/3 ワーククリア</div>
+  <div class="progress-count"><b id="cnt">0</b>/4 ワーククリア</div>
 </div>
 
 <div class="wrap">
@@ -265,7 +265,7 @@
       <ul>
         <li><b>「自分には強みがない」は勘違い</b>だという気づき。調べても答えがなく、自分で進めるしかなかった仕事。<span class="pk">それがすでに、あなただけの専門性</span></li>
         <li>ワークで作る<b>自分の棚卸し表</b>（業種の専門性 × クライアント対応の専門性）と交差点候補3つ</li>
-        <li><b>発信の軸1行＋最初のポスト案1本</b>。Xで何をどう発信していくかの道筋</li>
+        <li><b>発信の軸1行＋最初のポスト案1本</b>、そして3行の<b>発信スタート宣言</b>。Xで何をどう発信していくかの方針</li>
         <li>強み・箔は先に決めるものではなく、<b>熱中→発信→反応のループ</b>で後から定まるという認識</li>
       </ul>
     </div>
@@ -669,6 +669,50 @@
     </div>
   </section>
 
+  <!-- ===== 発信スタート宣言 ===== -->
+  <div class="ribbon pink"><span>仕上げ｜発信スタート宣言（30秒）</span></div>
+  <p class="sec-lead">最後に、今日決めたことを3行の「宣言」にまとめます。これが明日からの発信方針です。</p>
+
+  <section class="step b-pink" id="sengen">
+    <div class="done-banner">✅ クリア！（チェックを外すと戻せます）</div>
+    <div class="step-head">
+      <div class="step-num pink">✍</div>
+      <div class="step-title">
+        <h2>発信スタート宣言を書く</h2>
+        <div class="step-meta">
+          <span class="tag time">⏱ 30秒</span>
+          <span class="tag all">👥 全員</span>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size:14.5px">圧縮版までの結果をAIに貼ると、次の3行に整えてくれます。できあがった宣言は<b>メモに保存して、懇親会でぜひ聞かせてください</b>。</p>
+
+    <div class="box point">
+      <div class="box-h">📝 宣言の形式（3行だけ）</div>
+      <b>私の軸（1行）</b>：届けたい層 × 何を発信するか<br>
+      <b>読んでほしい読者</b>：例）シード起業家、クリニック院長、同業の会計士<br>
+      <b>最初に書く3本のテーマ</b>：行動指針「まず10本」の最初の3本
+    </div>
+
+    <div class="copy">
+      <div class="copy-label">📋 宣言化プロンプト（圧縮版の結果を貼ってそのまま使えます）</div>
+      <pre id="pt-sengen">以下は、今日のセミナーのワークで整理した私の結果です。
+
+（ここに圧縮版までの結果＝発信の軸1行と最初のポスト案を貼り付け）
+
+この内容を「発信スタート宣言」の形に整えてください。形式は次の3行:
+- 私の軸（1行）：
+- 読んでほしい読者：
+- 最初に書く3本のテーマ：
+
+体言止めで短く。営業っぽい言葉は入れないでください。</pre>
+      <button class="copy-btn" data-target="pt-sengen">コピー</button>
+    </div>
+
+    <div class="check"><input type="checkbox" id="c4"><label for="c4">発信スタート宣言、3行できた！</label></div>
+  </section>
+
   <!-- ===== 発信の5原則 ===== -->
   <div class="ribbon"><span>いざ発信するとき。5つの原則</span></div>
   <p class="sec-lead">X歴15年以上・炎上ゼロで、発信を仕事につなげてきた運用ルールです。</p>
@@ -725,7 +769,7 @@ document.querySelectorAll('.copy-btn').forEach(function(btn){
 
 /* 進捗チェック（localStorage保存） */
 var KEY='nettchu-seminar-progress';
-var boxes=['c1','c2','c3'].map(function(id){return document.getElementById(id);});
+var boxes=['c1','c2','c3','c4'].map(function(id){return document.getElementById(id);});
 var saved={};
 try{saved=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){}
 boxes.forEach(function(b){
