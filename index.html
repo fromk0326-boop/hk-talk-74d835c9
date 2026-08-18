@@ -244,7 +244,7 @@
 <div class="progress-bar">
   <div class="logo">夢中で取り組める<span>領域</span>の見つけ方</div>
   <div class="progress-track"><div class="progress-fill" id="fill"></div></div>
-  <div class="progress-count"><b id="cnt">0</b>/4 ワーククリア</div>
+  <div class="progress-count"><b id="cnt">0</b>/6 ステップクリア</div>
 </div>
 
 <div class="wrap">
@@ -355,8 +355,20 @@
   </section>
 
   <!-- ===== 第2部 ワーク ===== -->
-  <div class="ribbon pink"><span>第2部｜ワーク。ここからは、あなたの番</span></div>
-  <p class="sec-lead">お手元で Claude または ChatGPT を開いてください（無料版でOK）。このページのプロンプトをコピーして貼るだけです。</p>
+  <div class="ribbon pink"><span>第2部｜ワーク。全6ステップ、当日全部やります</span></div>
+  <p class="sec-lead">お手元で Claude または ChatGPT を開いてください（無料版でOK）。上から順に、プロンプトをコピーして貼るだけです。</p>
+
+  <section class="step" id="flow">
+    <h2 style="margin:0 0 10px;font-size:19px">🗺 ワークの全体像（約40分）</h2>
+    <div class="rules">
+      <div class="rule"><span class="n">1</span><div><b>棚卸し（12分）</b><div class="d">AIと一緒に、自分の専門性の原石を掘り出す</div></div></div>
+      <div class="rule"><span class="n">2</span><div><b>意見交換・発表（10分）</b><div class="d">他人の目で「それ、普通にすごい」を見つけてもらう</div></div></div>
+      <div class="rule"><span class="n">3</span><div><b>発信の軸を1行に（3分）</b><div class="d">届けたい層 × 何を発信するか＋最初のポスト案1本</div></div></div>
+      <div class="rule"><span class="n">4</span><div><b>発信の壁打ち（8分）</b><div class="d">コースA=これから始める人 ／ コースB=すでに発信している人</div></div></div>
+      <div class="rule"><span class="n">5</span><div><b>同業リサーチ（6分）</b><div class="d">先行アカウントの型と、空いている切り口を知る</div></div></div>
+      <div class="rule"><span class="n">6</span><div><b>発信スタート宣言（1分）</b><div class="d">3行の方針にまとめて修了🎉 懇親会へ</div></div></div>
+    </div>
+  </section>
 
   <!-- 大前提 -->
   <section class="step b-purple" id="premise">
@@ -383,7 +395,7 @@
       <div class="step-title">
         <h2>AI分析：業務の棚卸し ⛏️</h2>
         <div class="step-meta">
-          <span class="tag time">⏱ 15分</span>
+          <span class="tag time">⏱ 12分</span>
           <span class="tag all">👥 全員</span>
           <span class="tag type">🤖 Claude / ChatGPT</span>
         </div>
@@ -457,7 +469,7 @@
       <div class="step-title">
         <h2>意見交換 → 発表 🗣️</h2>
         <div class="step-meta">
-          <span class="tag time">⏱ 10分＋10分</span>
+          <span class="tag time">⏱ 10分</span>
           <span class="tag all">👥 近くの3〜4人で</span>
         </div>
       </div>
@@ -483,7 +495,7 @@
     <div class="step-head">
       <div class="step-num">3</div>
       <div class="step-title">
-        <h2>発信の軸を、1行だけ持ち帰る 🧭</h2>
+        <h2>発信の軸を、1行に決める 🧭</h2>
         <div class="step-meta">
           <span class="tag time">⏱ 3分</span>
           <span class="tag all">👥 全員</span>
@@ -491,14 +503,14 @@
       </div>
     </div>
 
-    <p style="font-size:14.5px">仕上げです。ワーク①の結果（強みの原石・交差点候補）をそのままAIに貼ると、<b>「届けたい層 × 何を発信するか」の軸1行と、最初のポスト案1本</b>が返ってきます。Xで何をどう発信していくか。道筋のひとこと版を持って懇親会へ。</p>
+    <p style="font-size:14.5px">STEP1の結果（強みの原石・交差点候補）をそのままAIに貼ると、<b>「届けたい層 × 何を発信するか」の軸1行と、最初のポスト案1本</b>が返ってきます。ここから先のステップは、全部この軸を使います。</p>
 
     <div class="copy">
       <div class="copy-label">📋 圧縮版プロンプト（ワーク①の結果を貼ってから送信）</div>
       <pre id="pt-mini">私は公認会計士です。業務の棚卸しワークで、
 私の「強みの原石」と「交差点候補」が以下のとおり見つかりました。
 
-（ここにワーク①の結果を貼り付け）
+（ここにSTEP1の棚卸し結果を貼り付け）
 
 この内容をもとに、お願いします。
 - 「届けたい層 × 何を発信するか」の発信の軸を1行で提案する
@@ -511,16 +523,25 @@
   </section>
 
   <!-- ===== ＋α 2コース ===== -->
-  <div class="ribbon yellow"><span>＋α｜時間があれば。発信をさらに磨くワーク</span></div>
-  <p class="sec-lead">当日できなくても大丈夫。自宅で10分ずつ、このページからそのままできます。</p>
-
   <section class="step b-orange" id="plus">
+    <div class="done-banner">✅ クリア！（チェックを外すと戻せます）</div>
+    <div class="step-head">
+      <div class="step-num orange">4</div>
+      <div class="step-title">
+        <h2>発信の壁打ち（コースを1つ選ぶ）📣</h2>
+        <div class="step-meta">
+          <span class="tag time">⏱ 8分</span>
+          <span class="tag all">👥 全員・自分に合うコースで</span>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:14.5px">STEP3の軸を「どう伝えて、どう届けるか」まで作ります。発信の現在地でコースを1つ選んでください。迷ったらコースAへ。<b>当日はAIの返事の1往復目まででOK</b>。続きは帰ってからこのページでできます。</p>
     <!-- 分岐イラスト -->
     <figure class="illust"><img src="img/scene04_fork.jpg" alt="発信の現在地で2つのコースに分かれる道のイラスト" onerror="if(!this.dataset.alt){this.dataset.alt=1;this.src=this.src.replace('.jpg','.png');}else{this.parentElement.style.display='none';}"></figure>
 
     <div class="course2">
       <div class="course-card">
-        <span class="cc-tag">ワーク②｜これから始める人・立て直したい人</span>
+        <span class="cc-tag">コースA｜これから始める人・立て直したい人</span>
         <h3>SNSアカウント診断</h3>
         <ul>
           <li><b>プロフィール文</b>：何の専門家か3秒で伝わるか。改善案3パターン</li>
@@ -530,7 +551,7 @@
         </ul>
       </div>
       <div class="course-card pink">
-        <span class="cc-tag">ワーク③｜すでにX・noteで発信している人</span>
+        <span class="cc-tag">コースB｜すでにX・noteで発信している人</span>
         <h3>リーチ壁打ち</h3>
         <ul>
           <li>アカウント・記事の<b>リンクを貼って診断</b></li>
@@ -542,7 +563,7 @@
     </div>
 
     <details>
-      <summary>📋 ワーク② アカウント診断プロンプト（開いてコピー）</summary>
+      <summary>📋 コースA アカウント診断プロンプト（開いてコピー）</summary>
       <div class="body">
         <div class="copy">
           <pre id="pt-w2">あなたはSNS発信戦略の壁打ち相手です。
@@ -573,7 +594,7 @@
     </details>
 
     <details>
-      <summary>📋 ワーク③ リーチ壁打ちプロンプト（開いてコピー）</summary>
+      <summary>📋 コースB リーチ壁打ちプロンプト（開いてコピー）</summary>
       <div class="body">
         <div class="copy">
           <pre id="pt-w3">あなたはSNS発信戦略の壁打ち相手です。
@@ -602,26 +623,28 @@
         <p style="font-size:14px">ポイント：診断→反応→深掘りの往復で使うプロンプトです。「その改善案でリライトして」「別の切り口も」と返しながら、自分の言葉に寄せていってください。</p>
       </div>
     </details>
+    <div class="check"><input type="checkbox" id="c5"><label for="c5">自分のコースの壁打ちで、発信の設計図を受け取った！</label></div>
   </section>
 
   <section class="step b-purple" id="w4">
+    <div class="done-banner">✅ クリア！（チェックを外すと戻せます）</div>
     <div class="step-head">
-      <div class="step-num" style="background:var(--purple)">4</div>
+      <div class="step-num" style="background:var(--purple)">5</div>
       <div class="step-title">
-        <h2>同業リサーチ：先行アカウントの型を学ぶ 🔍</h2>
+        <h2>同業リサーチ壁打ち 🔍</h2>
         <div class="step-meta">
-          <span class="tag time">⏱ 10分</span>
-          <span class="tag type">🎯 テーマが決まった人の次の一歩</span>
+          <span class="tag time">⏱ 6分</span>
+          <span class="tag all">👥 全員</span>
         </div>
       </div>
     </div>
 
-    <p style="font-size:14.5px">発信の軸が決まったら、<b>今日のワークの結果をそのまま持ち込んで</b>、先行アカウントのリサーチをAIと壁打ちします。探し方（検索キーワード・候補）はAIが提案してくれるので、Xで見つけたものを貼って往復するだけ。先行アカウントがまだやっていない「空いている切り口」が見つかれば、第一想起への最短ルートが見えます。</p>
+    <p style="font-size:14.5px">発信の軸が決まったら、<b>今日のワークの結果をそのまま持ち込んで</b>、先行アカウントのリサーチをAIと壁打ちします。探し方（検索キーワード・候補）はAIが提案してくれるので、Xで見つけたものを貼って往復するだけ。<b>当日は「探し方の提案」を受け取るところまででOK</b>。往復の続きは帰ってからでもできます。</p>
 
     <div class="box point">
       <div class="box-h">📋 進め方（AIとの往復壁打ち）</div>
       <ol style="margin:6px 0;padding-left:22px">
-        <li style="margin:4px 0">ワーク①の棚卸し結果＋圧縮版の発信の軸を、下のプロンプトに貼ってAIに送る</li>
+        <li style="margin:4px 0">STEP1の棚卸し結果＋STEP3の発信の軸を、下のプロンプトに貼ってAIに送る</li>
         <li style="margin:4px 0">AIが<b>検索キーワード5個と先行アカウントの候補・タイプ</b>を提案してくれる</li>
         <li style="margin:4px 0">提案をヒントにXで検索し、気になったアカウントのプロフィールや伸びている投稿をコピー</li>
         <li style="margin:4px 0">AIに貼り返すと、型の抽出→空いている切り口→差別化ポジションまで壁打ちが進む</li>
@@ -630,12 +653,12 @@
     </div>
 
     <div class="copy">
-      <div class="copy-label">📋 ワーク④ 同業リサーチ壁打ちプロンプト（ワーク結果を貼ってそのまま使えます）</div>
+      <div class="copy-label">📋 STEP5 同業リサーチ壁打ちプロンプト（ワーク結果を貼ってそのまま使えます）</div>
       <pre id="pt-w4">あなたはSNS発信戦略の壁打ち相手です。
 私は公認会計士です。今日のワークで、自分の強みと発信の軸を整理しました。
 
 # 私のワーク結果
-（ここにワーク①の棚卸し結果と、圧縮版で作った発信の軸1行を貼り付け）
+（ここにSTEP1の棚卸し結果と、STEP3で作った発信の軸1行を貼り付け）
 
 # お願いすること
 この軸の「先行アカウント」を一緒にリサーチして、
@@ -665,28 +688,26 @@
 
     <div class="box tip">
       <div class="box-h">🔑 ポイント</div>
-      「同じテーマの人がもういる」はやめる理由ではなく、<b>市場がある証拠</b>です。見るのは「何を書いているか」より「誰に向けてどう書いているか」。空いている切り口 × 自分だけの経験（ワーク①の原石）の組み合わせが、あなたのポジションになります。
+      「同じテーマの人がもういる」はやめる理由ではなく、<b>市場がある証拠</b>です。見るのは「何を書いているか」より「誰に向けてどう書いているか」。空いている切り口 × 自分だけの経験（STEP1の原石）の組み合わせが、あなたのポジションになります。
     </div>
+    <div class="check"><input type="checkbox" id="c6"><label for="c6">先行アカウントの探し方と、空いている切り口が見えた！</label></div>
   </section>
 
-  <!-- ===== 発信スタート宣言 ===== -->
-  <div class="ribbon pink"><span>仕上げ｜発信スタート宣言（30秒）</span></div>
-  <p class="sec-lead">最後に、今日決めたことを3行の「宣言」にまとめます。これが明日からの発信方針です。</p>
-
+  <!-- ===== STEP6 発信スタート宣言 ===== -->
   <section class="step b-pink" id="sengen">
     <div class="done-banner">✅ クリア！（チェックを外すと戻せます）</div>
     <div class="step-head">
-      <div class="step-num pink">✍</div>
+      <div class="step-num pink">6</div>
       <div class="step-title">
         <h2>発信スタート宣言を書く</h2>
         <div class="step-meta">
-          <span class="tag time">⏱ 30秒</span>
-          <span class="tag all">👥 全員</span>
+          <span class="tag time">⏱ 1分</span>
+          <span class="tag all">👥 全員・これで修了</span>
         </div>
       </div>
     </div>
 
-    <p style="font-size:14.5px">圧縮版までの結果をAIに貼ると、次の3行に整えてくれます。できあがった宣言は<b>メモに保存して、懇親会でぜひ聞かせてください</b>。</p>
+    <p style="font-size:14.5px">最後に、今日決めたことを3行の「宣言」にまとめます。STEP3までの結果をAIに貼ると、次の3行に整えてくれます。できあがった宣言は<b>メモに保存して、懇親会でぜひ聞かせてください</b>。</p>
 
     <div class="box point">
       <div class="box-h">📝 宣言の形式（3行だけ）</div>
@@ -696,10 +717,10 @@
     </div>
 
     <div class="copy">
-      <div class="copy-label">📋 宣言化プロンプト（圧縮版の結果を貼ってそのまま使えます）</div>
+      <div class="copy-label">📋 宣言化プロンプト（STEP3の結果を貼ってそのまま使えます）</div>
       <pre id="pt-sengen">以下は、今日のセミナーのワークで整理した私の結果です。
 
-（ここに圧縮版までの結果＝発信の軸1行と最初のポスト案を貼り付け）
+（ここにSTEP3までの結果＝発信の軸1行と最初のポスト案を貼り付け）
 
 この内容を「発信スタート宣言」の形に整えてください。形式は次の3行:
 - 私の軸（1行）：
@@ -769,7 +790,7 @@ document.querySelectorAll('.copy-btn').forEach(function(btn){
 
 /* 進捗チェック（localStorage保存） */
 var KEY='nettchu-seminar-progress';
-var boxes=['c1','c2','c3','c4'].map(function(id){return document.getElementById(id);});
+var boxes=['c1','c2','c3','c4','c5','c6'].map(function(id){return document.getElementById(id);});
 var saved={};
 try{saved=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){}
 boxes.forEach(function(b){
