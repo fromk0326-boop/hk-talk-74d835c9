@@ -224,6 +224,16 @@
   footer{max-width:860px;margin:0 auto;padding:0 20px 60px;font-size:13.5px;color:var(--sub);text-align:center}
   footer .links{margin-bottom:8px}
   .sparkle{position:absolute;pointer-events:none}
+  .svy-field{margin:14px 0 0}
+  .svy-field label{display:block;font-size:14px;font-weight:800;margin-bottom:6px}
+  .svy-field input,.svy-field textarea{width:100%;box-sizing:border-box;border:2px solid var(--line);border-radius:12px;padding:10px 12px;font-size:14.5px;font-family:inherit;background:var(--card);color:inherit}
+  .svy-field input:focus,.svy-field textarea:focus{outline:none;border-color:var(--blue)}
+  .svy-field textarea{min-height:130px;resize:vertical}
+  .svy-btn{display:block;width:100%;margin-top:14px;border:none;border-radius:12px;padding:13px;font-size:15.5px;font-weight:900;font-family:inherit;background:var(--blue);color:#fff;cursor:pointer}
+  .svy-btn:disabled{opacity:.55;cursor:default}
+  .svy-status{margin-top:10px;font-size:14px;font-weight:700;min-height:1.4em}
+  .svy-status.ok{color:var(--green)}
+  .svy-status.err{color:var(--pink)}
   @media(max-width:640px){
     .hero h1{font-size:26px}
     .step{padding:20px 16px}
@@ -845,7 +855,7 @@
         <tr><th>今日のステップ</th><th>畠山のケースでは（壁打ちして決めた結論）</th></tr>
         <tr><td><b>STEP1</b>｜棚卸し</td><td><b>結論：強みの原石は「メガベンチャー経理 × 独立税理士 × X発信」の交差点。</b>この3つが交差する人が他にいなかった。核は、業務をAIで仕組み化して回している「当事者」であること</td></tr>
         <tr><td><b>STEP2</b>｜他人の目</td><td><b>結論：一番の売りは「スタッフ0人で60社を回す仕組み」。</b>自分には日常すぎて気づけず、外からの反応で確定した</td></tr>
-        <tr><td><b>STEP3</b>｜発信の軸</td><td><b>結論：軸は上の3行に固定。</b>すべての投稿をこの軸の上で書き、軸から外れるネタは伸びそうでも書かない</td></tr>
+        <tr><td><b>STEP3</b>｜発信の軸</td><td><b>結論：軸は上の📌ボックスの3行に固定。</b>「AIで事務所業務を仕組み化する税理士。実例を、再現性ごと配る」の1行と、誰に届けたいか・何を刺しに行くかの3点セット。すべての投稿をこの軸の上で書き、軸から外れるネタは伸びそうでも書かない</td></tr>
         <tr><td><b>STEP4</b>｜壁打ち・型</td><td><b>結論：主語は「僕」・問いかけない・営業しない。当たった投稿はテンプレ化して、次からゼロから考えない。</b>炎上ゼロは性格ではなく設計</td></tr>
         <tr><td><b>STEP5</b>｜同業リサーチ</td><td><b>結論：空いていた「業務全体を仕組みとして見せる」の一点に張る。</b>同テーマのアカウントを全部見てレベル分けした結果、大半は「単発の感動報告」止まりだった</td></tr>
         <tr><td><b>STEP6</b>｜宣言→運用</td><td><b>結論：投稿ごとに計測して教訓を追記し、いいねよりブックマークを重視する。</b>軸と型は戦略ファイルに固定して運用（ブクマ＝あとで真似したい＝届けたい読者に刺さったシグナル）</td></tr>
@@ -881,15 +891,15 @@
 
     <div class="box point">
       <div class="box-h">🔍 深掘り③｜STEP5：同業リサーチで実際に見ていたもの</div>
-      <p style="margin:6px 0 0">2026年3月、最初のバズが出た直後に、発信力のある税理士・会計士のアカウントを並べて<b>「誰が、どこに立っているか」</b>を観察しました。敬意を込めて、僕なりの分析です。マス向けから、僕に近い専門特化の順に並べます。</p>
+      <p style="margin:6px 0 0">2026年3月、最初のバズが出た直後に、発信力のある税理士・会計士のアカウントを並べて<b>「誰が、どこに立っているか」</b>を観察しました。敬意を込めて、僕なりの分析です。マス向けから、僕に近い専門特化の順に並べます（フォロワー数は2026年8月時点）。</p>
       <div class="tbl-scroll" style="margin-top:10px">
         <table class="tbl">
           <tr><th style="min-width:11em">アカウント</th><th>発信テーマ</th><th>伸びている理由（僕の分析）</th></tr>
-          <tr><td><b>大河内 薫さん</b><br>@k_art_u</td><td>お金の教育。フリーランス・一般層向けの税金とお金の知識</td><td>「学校では教わらないお金の話」という万人に刺さるテーマを、漫画・動画・音声のマルチメディアで展開。税理士業ではなく<b>「教育」をポジションにした</b></td></tr>
-          <tr><td><b>山田 真哉さん</b><br>@kaikeishi1</td><td>エンタメ × 会計。芸能界特化の税理士業とYouTube解説</td><td>ベストセラー著者の実績 ×「オタク会計士」のキャラ × 時事ネタを会計士の目で切る切り口。<b>専門特化（芸能200社）と発信が一体</b>になっている</td></tr>
-          <tr><td><b>田淵 宏明さん</b><br>@hirotax</td><td>税金・節税の解説。YouTube登録42万人の「税理士YouTuber」</td><td>「税金の情報弱者を減らす」という旗 × ひとり社長という<b>明確な読者設定</b>。動画から書籍・サロンへの導線が設計されている</td></tr>
-          <tr><td><b>石割 由紀人さん</b><br>@cpaishiwari</td><td>スタートアップの資本政策 × 経営の修羅場</td><td>専門特化の長年の蓄積 × 失敗や修羅場を実名で語るストーリー。<b>専門情報だけでなく「人」が見える</b>から読まれる</td></tr>
-          <tr><td><b>遊佐 優さん</b><br>@masaru_growth</td><td>M&A × AI。M&A事例・決算の読み解きとClaude Codeでの実務自動化</td><td>掛け合わせの明確さ × 現役アドバイザーの一次情報 × 具体的なワークフロー実例。<b>当時、僕に一番近い場所で発信していた方</b></td></tr>
+          <tr><td><b>大河内 薫さん</b><br>@k_art_u<br><span style="font-size:12.5px;color:var(--sub)">フォロワー16.5万</span></td><td>お金の教育。フリーランス・一般層向けの税金とお金の知識</td><td>「学校では教わらないお金の話」という万人に刺さるテーマを、漫画・動画・音声のマルチメディアで展開。税理士業ではなく<b>「教育」をポジションにした</b></td></tr>
+          <tr><td><b>山田 真哉さん</b><br>@kaikeishi1<br><span style="font-size:12.5px;color:var(--sub)">フォロワー5.6万・YouTube 110万人</span></td><td>エンタメ × 会計。芸能界特化の税理士業とYouTube解説</td><td>ベストセラー著者の実績 ×「オタク会計士」のキャラ × 時事ネタを会計士の目で切る切り口。<b>専門特化（芸能200社）と発信が一体</b>になっている</td></tr>
+          <tr><td><b>田淵 宏明さん</b><br>@hirotax<br><span style="font-size:12.5px;color:var(--sub)">フォロワー2.4万・YouTube 42万人</span></td><td>税金・節税の解説。YouTube登録42万人の「税理士YouTuber」</td><td>「税金の情報弱者を減らす」という旗 × ひとり社長という<b>明確な読者設定</b>。動画から書籍・サロンへの導線が設計されている</td></tr>
+          <tr><td><b>石割 由紀人さん</b><br>@cpaishiwari<br><span style="font-size:12.5px;color:var(--sub)">フォロワー約5,900</span></td><td>スタートアップの資本政策 × 経営の修羅場</td><td>専門特化の長年の蓄積 × 失敗や修羅場を実名で語るストーリー。<b>専門情報だけでなく「人」が見える</b>から読まれる</td></tr>
+          <tr><td><b>遊佐 優さん</b><br>@masaru_growth<br><span style="font-size:12.5px;color:var(--sub)">フォロワー約2,800</span></td><td>M&A × AI。M&A事例・決算の読み解きとClaude Codeでの実務自動化</td><td>掛け合わせの明確さ × 現役アドバイザーの一次情報 × 具体的なワークフロー実例。<b>当時、僕に一番近い場所で発信していた方</b></td></tr>
         </table>
       </div>
       <p style="margin:10px 0 0">観察してわかったのは、<b>伸びている人は全員「テーマ × 読者 × 見せ方」のポジションが1行で言える</b>ということ。そして、この地図のどこにも「事務所業務の全体をAIで1つの仕組みとして見せる」人はいませんでした。AI×会計の発信の大半は「AIでこんなことができた」という単発の報告で、みんなまだ入口にいた。<b>だから、その空いている一点に張りました。</b></p>
@@ -912,6 +922,52 @@
     <p>熱中に気づく → 交差点を取る → 小さく発信 → 反応が来たら一本に絞る → 捨てて磨く</p>
     <p>熱中する。そして、熱中を伝える。<b>知られない熱中は、仕事になりようがない。</b></p>
     <p style="margin-top:18px">このあとの懇親会では、今日見つけた<b>「専門性」と「交差点」</b>をぜひ聞かせてください。</p>
+  </section>
+
+  <!-- ===== 受講後アンケート ===== -->
+  <div class="ribbon blue"><span>最後に｜受講後アンケート</span></div>
+  <p class="sec-lead">2分だけお時間ください。AIと話しながら答える形式です（もちろん直接書いてもOK）。</p>
+
+  <section class="step b-blue" id="survey">
+    <p style="font-size:14.5px">下のプロンプトをClaude（お使いのAIでOK）に貼ると、<b>インタビュー形式で3問</b>聞いてくれて、最後に回答文ができあがります。できた回答をその下の欄に貼って送信してください。今日のワークの延長で、話すだけでアンケートが完成します。</p>
+
+    <div class="copy">
+      <div class="copy-label">📋 アンケート回答プロンプト（AIに貼るだけ）</div>
+      <pre id="pt-survey">今日受講したセミナー「夢中で取り組める領域の見つけ方」の受講後アンケートに答えたいです。インタビュー役をお願いします。
+
+【進め方】
+次の3問を、1問ずつ・自由入力で聞いてください（まとめて聞かない・選択式にしない）。
+Q1. 今日の話でいちばん印象に残ったこと・気づきは何でしたか？（ワークで見つけた自分の強みでも、話の中の一言でもOK）
+Q2. 明日から、行動をどう変えますか？ 何を始めますか？（小さいことでOK。「いつ・何を」まで具体化を手伝ってください）
+Q3. 講師への一言・セミナーの感想があればどうぞ（特になければ「なし」でOK）
+
+【インタビューのルール】
+- 私の答えを立派な文章に書き換えないでください。言い回しは私のまま、誤字と重複だけ直す程度に。
+- 私が言っていないことを、あなたが代わりに書かないでください。
+- 一言だけの答えには、1回だけ「たとえばどんな場面で？」と具体化を促してOK。出てこなければそのまま次へ進んでください。
+
+【出力】
+3問終わったら、「アンケート回答」という見出しで、そのままコピペできる1つのコードブロックとして出力してください。
+■ 気づき：（Q1の答え）
+■ 明日からの行動：（Q2の答え）
+■ 一言：（Q3の答え。「なし」なら省略OK）
+※ 個人情報や顧問先名は入れないでください。
+最後に「このままコピーして、Webテキストのアンケート欄に貼って送信してください」と締めてください。</pre>
+      <button class="copy-btn" data-target="pt-survey">コピー</button>
+    </div>
+
+    <div class="svy-field">
+      <label for="svyName">お名前・ニックネーム（任意）</label>
+      <input type="text" id="svyName" placeholder="例：はたけやま">
+    </div>
+    <div class="svy-field">
+      <label for="svyAnswer">アンケート回答（AIが出した回答をそのまま貼ってOK）</label>
+      <textarea id="svyAnswer" placeholder="■ 気づき：&#10;■ 明日からの行動：&#10;■ 一言："></textarea>
+    </div>
+    <button class="svy-btn" id="svyBtn">📮 アンケートを送信する</button>
+    <div class="svy-status" id="svyStatus"></div>
+
+    <p style="font-size:13.5px;margin:12px 0 0;color:var(--sub)">回答は講師（畠山）が今後のセミナー改善に使います。お名前は空欄のままでもかまいません。個人情報・顧問先名は書かないようお願いします。</p>
   </section>
 
 </div>
@@ -978,6 +1034,32 @@ function celebrate(){
   }
 }
 update(false);
+
+/* 受講後アンケート送信（GASウェブアプリへ） */
+var SURVEY_API='';/* デプロイ後にGASウェブアプリURLを設定 */
+document.getElementById('svyBtn').addEventListener('click',function(){
+  var btn=this;
+  var status=document.getElementById('svyStatus');
+  var name=document.getElementById('svyName').value.trim();
+  var answer=document.getElementById('svyAnswer').value.trim();
+  if(!answer){status.textContent='アンケート回答を入力してください。';status.className='svy-status err';return;}
+  if(!SURVEY_API){status.textContent='アンケートの受付準備中です。少し時間をおいてお試しください。';status.className='svy-status err';return;}
+  btn.disabled=true;
+  status.textContent='送信中…';status.className='svy-status';
+  fetch(SURVEY_API,{
+    method:'POST',
+    mode:'no-cors',
+    headers:{'Content-Type':'text/plain;charset=utf-8'},
+    body:JSON.stringify({name:name||'匿名',answer:answer})
+  }).then(function(){
+    status.textContent='送信しました。ご回答ありがとうございました！';status.className='svy-status ok';
+    document.getElementById('svyAnswer').value='';
+    btn.disabled=false;
+  }).catch(function(){
+    status.textContent='送信に失敗しました。通信環境をご確認のうえ、もう一度お試しください。';status.className='svy-status err';
+    btn.disabled=false;
+  });
+});
 </script>
 </body>
 </html>
