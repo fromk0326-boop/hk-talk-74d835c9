@@ -929,17 +929,18 @@
   <p class="sec-lead">2分だけお時間ください。AIと話しながら答える形式です（もちろん直接書いてもOK）。</p>
 
   <section class="step b-blue" id="survey">
-    <p style="font-size:14.5px">下のプロンプトをClaude（お使いのAIでOK）に貼ると、<b>インタビュー形式で3問</b>聞いてくれて、最後に回答文ができあがります。できた回答をその下の欄に貼って送信してください。今日のワークの延長で、話すだけでアンケートが完成します。</p>
+    <p style="font-size:14.5px">下のプロンプトをClaude（お使いのAIでOK）に貼ると、<b>インタビュー形式で4問</b>聞いてくれて、最後に回答文ができあがります。できた回答をその下の欄に貼って送信してください。今日のワークの延長で、話すだけでアンケートが完成します。</p>
 
     <div class="copy">
       <div class="copy-label">📋 アンケート回答プロンプト（AIに貼るだけ）</div>
       <pre id="pt-survey">今日受講したセミナー「夢中で取り組める領域の見つけ方」の受講後アンケートに答えたいです。インタビュー役をお願いします。
 
 【進め方】
-次の3問を、1問ずつ・自由入力で聞いてください（まとめて聞かない・選択式にしない）。
+次の4問を、1問ずつ・自由入力で聞いてください（まとめて聞かない・選択式にしない）。
 Q1. 今日の話でいちばん印象に残ったこと・気づきは何でしたか？（ワークで見つけた自分の強みでも、話の中の一言でもOK）
 Q2. 明日から、行動をどう変えますか？ 何を始めますか？（小さいことでOK。「いつ・何を」まで具体化を手伝ってください）
-Q3. 講師への一言・セミナーの感想があればどうぞ（特になければ「なし」でOK）
+Q3. 「自分の特化テーマを決めること」や「SNSでの発信・マーケティング」で、いま困っていること・引っかかっていることはありますか？（あればそのまま教えてください。なければ「なし」でOK）
+Q4. 講師への一言・セミナーの感想があればどうぞ（特になければ「なし」でOK）
 
 【インタビューのルール】
 - 私の答えを立派な文章に書き換えないでください。言い回しは私のまま、誤字と重複だけ直す程度に。
@@ -947,10 +948,11 @@ Q3. 講師への一言・セミナーの感想があればどうぞ（特にな�
 - 一言だけの答えには、1回だけ「たとえばどんな場面で？」と具体化を促してOK。出てこなければそのまま次へ進んでください。
 
 【出力】
-3問終わったら、「アンケート回答」という見出しで、そのままコピペできる1つのコードブロックとして出力してください。
+4問終わったら、「アンケート回答」という見出しで、そのままコピペできる1つのコードブロックとして出力してください。
 ■ 気づき：（Q1の答え）
 ■ 明日からの行動：（Q2の答え）
-■ 一言：（Q3の答え。「なし」なら省略OK）
+■ 困りごと：（Q3の答え。「なし」なら省略OK）
+■ 一言：（Q4の答え。「なし」なら省略OK）
 ※ 個人情報や顧問先名は入れないでください。
 最後に「このままコピーして、Webテキストのアンケート欄に貼って送信してください」と締めてください。</pre>
       <button class="copy-btn" data-target="pt-survey">コピー</button>
@@ -962,7 +964,7 @@ Q3. 講師への一言・セミナーの感想があればどうぞ（特にな�
     </div>
     <div class="svy-field">
       <label for="svyAnswer">アンケート回答（AIが出した回答をそのまま貼ってOK）</label>
-      <textarea id="svyAnswer" placeholder="■ 気づき：&#10;■ 明日からの行動：&#10;■ 一言："></textarea>
+      <textarea id="svyAnswer" placeholder="■ 気づき：&#10;■ 明日からの行動：&#10;■ 困りごと：&#10;■ 一言："></textarea>
     </div>
     <button class="svy-btn" id="svyBtn">📮 アンケートを送信する</button>
     <div class="svy-status" id="svyStatus"></div>
@@ -1050,7 +1052,7 @@ document.getElementById('svyBtn').addEventListener('click',function(){
     method:'POST',
     mode:'no-cors',
     headers:{'Content-Type':'text/plain;charset=utf-8'},
-    body:JSON.stringify({name:name||'匿名',answer:answer})
+    body:JSON.stringify({name:name,answer:answer})
   }).then(function(){
     status.textContent='送信しました。ご回答ありがとうございました！';status.className='svy-status ok';
     document.getElementById('svyAnswer').value='';
